@@ -1,0 +1,134 @@
+
+THIS IS MY PAGE
+<showingProject></showingProject>
+    <div class="norow community-container curia-element-container-NEW">
+        <div class="maintopic">
+            <div class="btn-group pull-right filter-menu" data-thread-type="topic">
+                <button type="button" class="btn btn-default btn-sm">All</button>
+                <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <small>&nbsp;&nbsp;&nbsp;&nbsp;Filter by type:</small>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="#" onClick="ForumPage.filterThreadPage(<<element.id>>);">All</a></li>
+                    <li><a href="#" onClick="ForumPage.filterThreadPage(<<element.id>>);">Message</a></li>
+                    <li><a href="#" onClick="ForumPage.filterThreadPage(<<element.id>>);">Event</a></li>
+                    <li><a href="#" onClick="ForumPage.filterThreadPage(<<element.id>>);">File</a></li>
+                </ul>
+            </div>
+            <div class="filter-counter">Showing <<element.childCount>> results</div>
+            <h2>
+                <<element.summary>>
+                <<#element.permissions.canEditTopic>>
+                <small>
+                    <a href="#" onclick="AdminModule.updateTopic('<<element.id>>');" class="fa fa-pencil text-muted"></a>
+                </small>
+                <</element.permissions.canEditTopic>>
+            </h2>
+            <div>
+                <div class="main-topic-container curia-element-NEW first"
+                     data-curia-elementId="<<element.id>>"
+                     data-curia-rootid="<<element.id>>"
+                     data-curia-parentid="<<element.id>>"
+                     data-curia-type="message"
+                     data-curia-categoryid="<<element.parentId>>"
+                     data-curia-description="<<element.summary>>">
+
+                    <<! This div displays the element >>
+                    <div class="curia-displayarea-NEW">
+                        <input type="hidden" class="curia-description-NEW curia-urlive-NEW" value="<<element.description>>">
+                        <input type="hidden" class="curia-summary-NEW" value="<<element.summary>>">
+
+                        <<element.description>>
+
+                        <!-- Description -->
+                        <div class="com-post">
+
+                            <!-- Spinner and preview area-->
+                            <i class="curia-loadicon-NEW fa fa-spin4 fa-spin" style="display:none;"></i>
+                            <div class="curia-previewarea-NEW urlive-container" style="display:none;"></div>
+
+
+                            <p class="com-icons first">
+                                <span class="vote curia-vote-totals-NEW curia-vote-NEW" data-curia-rootid="<<element.id>>" data-curia-aspect="likedislike">
+
+                                    <!-- like -->
+                                    <a href="#" class="curia-vote-button-NEW arrow fa fa-caret-up" data-curia-value="like">
+                                        <small class="fa fa-heart-o" data-curia-value="like">
+                                            <!-- [change the style class to fa-heart if liked] -->
+                                        </small>
+                                        <span class="count likes"></span>
+                                    </a>
+
+                                    <!-- dislike -->
+                                    <a href="#" class="curia-vote-button-NEW arrow fa fa-caret-down" data-curia-value="dislike">
+                                        <span class="count dislikes"></span>
+                                    </a>
+
+                                </span>
+                                &nbsp;&nbsp;
+                                <!-- Delegate event handlers for these buttons are attached in Curia.initialize() in forum.*.js -->
+                                <a href="#" class="curia-button-NEW" data-curia-op="show-create-form" data-curia-type="message" data-curia-form="#id-curia-create-message-NEW">
+                                  <i class="fa fa-comment"></i> <span>Post Message</span>
+                  </a>
+                                &nbsp;&nbsp;
+                                <<#element.canSendEmail>>
+                                <a href="#" class="curia-button-NEW send-email" data-curia-op="show-create-form" data-curia-type="email" data-curia-form="#id-curia-create-message-NEW">
+                                  <i class="fa fa-envelope-o"></i> <span>Send Email</span>
+                  </a>
+                                &nbsp;&nbsp;
+                                <</element.canSendEmail>>
+                                <<#element.fileUploadPermission>>
+                                        <a href="#" data-curia-op="show-create-form" data-curia-type="attachment" data-curia-form="#id-curia-create-attachment-NEW" data-curia-elemId="<<element.id>>" data-curia-rootId="<<element.id>>" data-toggle="modal" data-target="#dropzoneModal">
+                                          <i class="fa fa-paperclip"></i> <span>Attach File</span>
+                      </a>
+                &nbsp;&nbsp;
+                                <</element.fileUploadPermission>>
+                                <<#element.permissions.canCreateEventViaPost>>
+                                  <a href="#" class="add-widget-calendar" data-curia-elemId="<<element.id>>" data-curia-rootId="<<element.id>>" data-curia-topic="<<element.summary>>">
+                                      <i class="fa fa-calendar-o"></i> <span>Add Event</span>
+                    </a>
+                                <</element.permissions.canCreateEventViaPost>>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- This div is used for both editing this existing element and when posting a response -->
+                    <div class="curia-workarea-NEW" style="display:none;"></div>
+
+
+                    <!-- element status bar -->
+                    <div class="curia-status-NEW status alert" style="display: none;">
+                        <div class="message">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Child posts for element <<element.id>> -->
+            <div class="clearfix"></div>
+
+            <div id="widget-calendar" data-curia-elemid="<<element.id>>" data-curia-rootid="<<element.id>>" data-curia-topic="<<element.summary>>"></div>
+            <div id="widget-calendar-button-container" data-target-calendar="#widget-calendar[data-curia-elemid=<<element.id>>]">
+                <div onclick="$('#widget-calendar[data-curia-elemid=<<element.id>>]').fullCalendar('prev');">prev</div>
+                 |
+                <div onclick="$('#widget-calendar[data-curia-elemid=<<element.id>>]').fullCalendar('next');">next</div>
+            </div>
+
+            <div id="form-<<element.id>>-posts" class="norow child-posts first">
+                <<{childrenHtml}>>
+                <div class="text-center" style="display: none">
+                    <br>
+                    <i class="fa fa-spin4 fa-2x text-muted fa-spin"></i>
+              </div>
+            </div>
+        </div>
+    </div>

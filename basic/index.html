@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+localhost:4000
+id = 
+localhost:4000
+-->
+<html lang="en">
+	<head>
+		<link href="myPage.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://bcteam.github.io/Solas-UI/0.0.5/css/bc-theme.css">
+		<link href="http://localhost:4000/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	
+	
+	
+	
+	<body>
+		<h1>Here is my forum</h1>
+
+		<div id="thread" class="curia-thread-NEW" data-curia-theme="my-theme"></div>
+		
+	</body>
+
+
+
+		
+	<script src="http://localhost:4000/libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="http://localhost:4000/js/curia-0.1.1.js"></script>
+	<script src="http://localhost:4000/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://localhost:4000/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script>
+	
+	    // Initialize the Curia Forum
+	    Curia.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://localhost:4000',
+	        tenantId: 'taiwan',
+	        development_userId: '1004513',
+	        debug: false,
+	        themes: {
+	            "my-theme": {
+	                "*_0": 				'/templates/basic-debug.html',
+	            },
+	        }
+	    });
+	
+		var elementSelector = '#thread';
+		var topicId = 1007791;
+		Curia.displayThread(elementSelector, topicId, 'my-theme');
+
+	</script>
+</html>
