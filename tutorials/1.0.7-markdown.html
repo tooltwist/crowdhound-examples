@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Normal headers go here -->
+		<title>Markdown</title>
+		
+		<!-- Page-related styles -->
+		<link href="1.0.css" rel="stylesheet">
+		<link href="../libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://crowdhound-examples:4521/templates/markdown/markdown.css" rel="stylesheet">
+	</head>
+	
+    <body class="myPage">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
+			Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="canvas">
+			<div class="jumbotron">
+				<div class="head1">
+					<div class="container">
+						<p class="theatre">Theatre</p>
+						<h1>Much Ado About Nothing review – sharp,<br>
+							smart and very funny</h1>
+					</div>
+				</div>
+
+				<div class="head2">
+					<div class="container">
+						<h3>Dundee Rep</h3>
+						Benedick and Beatrice offer a romance worth believing in Irene Macdougall’s intelligent, well paced production
+					</div>
+				</div>
+			</div><!-- jumbotron -->
+            <div class="container">
+                <div class="row">
+					<div class='col-md-12'>
+						<h1>Much Ado about Nothing</h1>
+						<img src="../images/muchAdoAboutNothing.jpg" class="newspaper-img">
+						<br/>
+						<div class="imagetext">Peekaboo … Much Ado About Nothing at Dundee Rep. Photograph: Tommy Ga-Ken Wan</div>
+						<br/>
+						<p class="newspaper-p">
+							Keep an eye on Robert Jack’s left hand. When the actor strides on with suave confidence as Benedick in
+							Shakespeare’s romcom, it is at ease by his side. The second he becomes unsettled, as word gets round
+							that Emily Winter’s Beatrice may have her sights on him, his hand is all aflutter. It seeks purchase
+							on his hip, then fails and flits up to his chin. No joy there, so on to the tip of his head and down
+							again. It never rests. This master of repartee is undone. He is a mess of twitches, hesitations and
+							double takes. He makes it very funny.
+						</p>
+					</div>
+				</div>				
+
+
+				<!-- This is where the Crowd Hound comments will be placed. -->
+                <div class="row">
+					<div class="col-md-12 bg-grey">
+						<h3>Comments</h3>
+						<div id="thread" class="curia-thread">Please wait...</div>
+					</div>
+				</div>
+
+
+				<!-- page footer -->
+                <div class="row">
+					<div class='col-md-12'>
+						<hr/>
+						<p class="newspaper-p">
+							Contents and images courtesy of
+							<a href="https://www.theguardian.com/stage/2016/jun/12/much-ado-about-nothing-review">The Guardian</a> newspaper.
+							<br/><br/>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!-- Page-related Javascript -->
+	<script src="../libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	
+	<!-- Crowdhound-related Javascript -->
+	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://crowdhound-examples:4521/js/curia-0.1.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Converter.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Sanitizer.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Editor.js"></script>
+	
+	<script>
+	
+	    // Initialize Crowdhound
+	    CrowdHound.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://crowdhound-examples:4521',
+	        tenantId: 'examples',
+	        debug: false,
+	        themes: {
+	            "my-theme": {
+					// templates
+	                "wrapper": 			'/templates/markdown/wrapper',
+	                "commentList_0": 	'/templates/comments/commentList',
+	                "comment_1": 		'/templates/markdown/markdown',
+	                "*_0": 				'/templates/basic/hidden',
+					// extra variables passed to the templates
+	                "options": 	{ flat: true, textonly: false, readonly: false },
+	            },
+			},
+			cookers: {
+                cook_markdown: cook_markdown,
+	        }
+	    });
+
+		// Display the comments for this tutorial
+		// See https://code.google.com/archive/p/pagedown/wikis/PageDown.wiki
+		var converter = Markdown.getSanitizingConverter();
+		var domSelector = '#thread';
+		var elementId = '$example-markdown';
+		var theme = 'my-theme';
+		CrowdHound.setLoader(domSelector, function() {
+			CrowdHound.load(elementId, domSelector, theme, function(err) {
+				
+				// Set up the editor, to provide a preview while editing the description.
+				var editor = new Markdown.Editor(converter);                
+				editor.run();
+			});
+		});
+		
+		
+		// Convert each description written using Markdown into HTML
+	    function cook_markdown(params, selection, callback) {
+		    CrowdHound.traverse(selection, function cookTopic(level, element, parent, next) {
+	            if (element.type == 'comment') {
+					element.convertedMarkdown = converter.makeHtml(element.description);
+				}
+				return next(null);
+ 			}, callback);
+		}
+
+
+	</script>
+</html>

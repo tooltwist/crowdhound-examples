@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="2a.2.css" rel="stylesheet">
+		<!--
+		<link rel="stylesheet" href="http://bcteam.github.io/Solas-UI/0.0.5/css/bc-theme.css">
+		-->
+		<link href="http://crowdhound-examples:4521/libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		
+        <link href="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+		<!--
+        <link href="//curia-api-prod.studylane.com.au/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/fullcalendar-2.3.2/fullcalendar.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/datetimepicker-2.4.5/jquery.datetimepicker.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/froala_editor.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/themes/gray.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/animate-css-3.4.0/animate.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/dropzone-4.0.1/dropzone.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/tooltwist/tt_materialize.css" rel="stylesheet">
+		-->
+			
+		<link href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/froala_editor.min.css" rel="stylesheet" type="text/css" />
+		<link href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/char_counter.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/code_view.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/colors.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/emoticons.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/file.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/fullscreen.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/image.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/image_manager.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/line_breaker.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/quick_insert.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/table.css">
+		<link rel="stylesheet" href="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/css/plugins/video.css">
+			
+
+	</head>
+	
+	
+	
+	
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="canvas">
+	        <div class="row-offcanvas row-offcanvas-left">
+                <div class="offcanvas-cover"></div>
+	            
+	            <div class="container">
+					<div id="thread" class="curia-thread" data-curia-theme="my-theme" data-junk="12345"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		
+
+		
+		
+	</body>
+
+
+		
+	<script src="http://crowdhound-examples:4521/libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/moment-2.10.3/moment.min.js"></script>
+	<script src="http://crowdhound-examples:4521/js/curia-0.1.2.js"></script>
+	
+	<script src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/froala_editor.min.js"></script>
+	
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/align.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/char_counter.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/code_beautifier.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/colors.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/entities.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/file.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/font_family.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/font_size.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/fullscreen.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/image.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/image_manager.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/inline_style.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/line_breaker.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/lists.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/paragraph_format.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/paragraph_style.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/quick_insert.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/quote.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/save.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/video.min.js"></script>
+	
+	
+	<script>
+	
+	    // Initialize the Curia Forum
+	    Curia.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://crowdhound-examples:4521',
+	        tenantId: 'examples',
+	        debug: false,
+			froala: {
+				// See https://www.froala.com/wysiwyg-editor/docs/options
+				heightMin: 300,
+				heightMax: 500,
+				toolbarButtons: [
+					'fullscreen', 'bold', 'italic', 'underline',
+					'|', 'paragraphFormat', 'fontFamily', 'fontSize', '|', 'color', 'clearFormatting',
+					'|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
+					'|', 'insertLink', 'insertImage', 'insertVideo',
+					'|', 'undo', 'redo',
+				],
+				toolbarButtonsMD: [
+					'fullscreen', 'bold', 'italic', 'underline',
+					'|', 'paragraphFormat', 'fontFamily', 'fontSize', '|', 'color', 'clearFormatting',
+					'|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
+					'|', 'insertLink', 'insertImage', 'insertVideo',
+					'|', 'undo', 'redo',
+				],
+				toolbarButtonsSM: [
+					'fullscreen', 'bold', 'italic', 'underline',
+					'|', 'paragraphFormat', 'fontFamily', 'fontSize', '|', 'color', 'clearFormatting',
+					'|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
+					'-', 'insertLink', 'insertImage', 'insertVideo',
+					'|', 'undo', 'redo',
+				],
+				toolbarButtonsXS: [
+					'fullscreen', 'bold', 'italic', 'underline',
+					'|', 'paragraphFormat', 'fontFamily', 'fontSize',
+					'-', 'color', 'clearFormatting',
+					'|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
+					'-', 'insertLink', 'insertImage', 'insertVideo',
+					'|', 'undo', 'redo',
+				],
+			},
+			uploadImages: true,
+	        themes: {
+	            "my-theme": {
+	                // "*_0": 				'/templates/basic/hidden',
+	                // "*_1": 				'#crowdhound-category-template',
+	                // "*_2": 				'#crowdhound-topic-template',
+	                // "*_3": 				'/templates/basic/element-1',
+	                "wrapper": 				'/templates/basic/wrapper',
+	                "*_0": 				'/templates/basic/element-0',
+	                "*_1": 				'/templates/basic/element-1',
+	                "image_0": 				'/templates/basic/hidden',
+	                // "attachment_0": 	'/templates/basic/hidden',
+	            },
+	        }
+	    });
+	
+	
+		var elementSelector = '#thread';
+//		var elementId = '$example-thread';
+//		var elementId = '$example-html-comments';
+		var elementId = 4000;
+		var theme = 'my-theme';
+
+var before = Date.now();		
+	/*
+        CrowdHound.select({
+			elementId: topicId,
+//            type: 'topic',
+			withChildren: true
+        }, function(err, selection) {
+		CrowdHound.select(topicId, function(err, selection) {
+	*/
+	//CrowdHound.select('$categoryList', 'category-list', function(err, selection) {
+		CrowdHound.setLoader(elementSelector, function loadForum(callback) {
+			
+			// Select the thread
+			CrowdHound.select({
+				elementId: elementId,
+				withChildren: true
+			}, function(err, selection) {
+	            if (err) {
+					alert('Error selecting forum records');
+	                console.log('Error during select: ', err);
+	                return callback(err);
+	            }
+				var selectTime = Date.now();
+				var elapsed = selectTime - before; 
+				console.log('  Select in ' + elapsed + 'ms');
+	            console.log('After select(): ', selection);
+
+	            // Now cook the data
+	            CrowdHound.cook({ }, selection, function(err, selection) {
+	                if (err) {
+	                    console.log('Error during cooking: ', err);
+		                return callback(err);
+	                }
+					var cookTime = Date.now();
+					var cookElapsed = cookTime - selectTime; 
+					var elapsed = cookTime - before;
+	                //console.log('\nAfter cook(): ', selection);
+					console.log('  Cooked in ' + cookElapsed + 'ms');
+					console.log('  Select + cook = ' + elapsed + 'ms');
+
+	                // Now display the data
+	                CrowdHound.render({
+	                    target: elementSelector,
+	                    theme: theme
+	                }, selection, function(err, selection) {
+	                    if (err) {
+	                        console.log('Error during display: ', err);
+			                return callback(err);
+	                    }
+	//                    $.unblockUI();
+	                    console.log('\nAfter display(): ', selection);
+		                return callback(null);
+	                }); // render
+	            }); // cook
+	        }); // select
+		});
+
+	</script>
+</html>

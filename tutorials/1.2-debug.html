@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="myPage.css" rel="stylesheet">
+		<!--
+		<link rel="stylesheet" href="http://bcteam.github.io/Solas-UI/0.0.5/css/bc-theme.css">
+		-->
+		<link href="http://crowdhound-examples:4521/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		
+        <link href="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+		<!--
+        <link href="//curia-api-prod.studylane.com.au/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/fullcalendar-2.3.2/fullcalendar.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/datetimepicker-2.4.5/jquery.datetimepicker.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/froala_editor.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/themes/gray.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/animate-css-3.4.0/animate.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/dropzone-4.0.1/dropzone.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/tooltwist/tt_materialize.css" rel="stylesheet">
+		-->
+
+	</head>
+	
+	
+	
+	
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="canvas">	            
+            <div class="container-fluid">
+				
+				
+                <div class="row">
+					<div class='col-md-offset-1 col-md-11' style="">
+						<h1>Here is my forum</h1>
+					</div>
+				</div>
+					
+                <div class="row">
+					<div class="col-md-12">
+						<div class="col-md-3 col-sm-6">COLUMN 1</div>
+						<div class="col-md-3 col-sm-6">COLUMN 2</div>
+						<div class="col-md-3 col-sm-6">COLUMN 3</div>
+						<div class="col-md-3 col-sm-6">COLUMN 4</div>
+					</div>
+				</div>
+					
+					
+                <div class="row">
+					<div class="col-md-12 bg-grey">
+							<div id="thread" class="curia-thread" data-curia-theme="my-theme"></div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</body>
+
+		
+	<script src="http://crowdhound-examples:4521/libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://crowdhound-examples:4521/js/curia-0.1.1.js"></script>
+	<script>
+	
+	    // Initialize the Curia Forum
+	    Curia.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://crowdhound-examples:4521',
+	        tenantId: 'examples',
+	        debug: true,
+	        themes: {
+	            "my-theme": {
+	                "*_0": 				'/templates/basic/debug'
+	            },
+	        }
+	    });
+	
+		var elementSelector = '#thread';
+		var topicId = 278060; // Studylane category-list
+		var theme = 'my-theme';
+		Curia.displayThread(elementSelector, topicId, theme);
+
+	</script>
+</html>

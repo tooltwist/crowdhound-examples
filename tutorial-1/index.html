@@ -15,7 +15,46 @@
 		<div id="thread" class="curia-thread-NEW" data-curia-theme="my-theme"></div>
 		
 	</body>
+	
+	<!--
+	--
+	--		CrowdHound template for categories
+	--
+	-->
+	<script id="crowdhound-category-template" type="text/template">
+		<div class="comment-block curia-element-container-NEW <<#element.deleted>>deleted<</element.deleted>>"
+						data-element-id="<<element.id>>"
+						style="margin: 20px; padding-top: 20px;">
 
+			<hr/>
+			<h1><<element.summary>><h1/>
+	
+			<p>
+				<<element.description>>
+			<p/>
+	
+			<!-- Children of element <<element.id>> -->
+			<<{childrenHtml}>>
+		</div>
+	</script>
+	
+	<!--
+	--
+	--		CrowdHound template for topics
+	--
+	-->
+	<script id="crowdhound-topic-template" type="text/template">
+		<div class="comment-block curia-element-container-NEW <<#element.deleted>>deleted<</element.deleted>>"
+						data-element-id="<<element.id>>"
+						style="margin: 20px; padding-top: 20px;">
+
+			<h2><<element.summary>><h2/>
+	
+			<<{element.description}>>
+	
+			<<{childrenHtml}>>
+		</div>
+	</script>
 
 
 		
@@ -34,9 +73,13 @@
 	        debug: false,
 	        themes: {
 	            "my-theme": {
-	                "*_0": 				'/templates/basic/hiddenz',
-	                "*_1": 				'/templates/basic/debug',
+	                "*_0": 				'/templates/basic/hidden',
+	                "*_1": 				'#crowdhound-category-template',
+	                "*_2": 				'#crowdhound-topic-template',
+//	                "*_2": 				'/templates/basic/debug',
+	                "*_3": 				'/templates/basic/element-1',
 	                "*_8": 				'/templates/basic/hidden',
+	                "attachment_0": 	'/templates/basic/hidden',
 //	                "*_0": 				'/templates/basic/element-0',
 //	                "*_1": 				'/templates/basic/element-1',
 	            },
@@ -46,7 +89,8 @@
 		var elementSelector = '#thread';
 		//var topicId = 1007791;
 		//var topicId = '$product-117';
-		var topicId = 278060; // Studylane category-list
+		//var topicId = 278060; // Studylane category-list
+		var topicId = '$categoryList'; // Studylane category-list
 		Curia.displayThread(elementSelector, topicId, 'my-theme');
 
 	</script>

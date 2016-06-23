@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="2.2-cooking.css" rel="stylesheet">
+		<!--
+		<link rel="stylesheet" href="http://bcteam.github.io/Solas-UI/0.0.5/css/bc-theme.css">
+		-->
+		<link href="http://crowdhound-examples:4521/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		
+        <link href="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+		<!--
+        <link href="//curia-api-prod.studylane.com.au/libs/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/fullcalendar-2.3.2/fullcalendar.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/datetimepicker-2.4.5/jquery.datetimepicker.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/froala_editor.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/froala-editor-1.2.8/css/themes/gray.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/animate-css-3.4.0/animate.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/dropzone-4.0.1/dropzone.min.css" rel="stylesheet">
+        <link href="//curia-api-prod.studylane.com.au/libs/tooltwist/tt_materialize.css" rel="stylesheet">
+		<link href="http://curia-s3-aws.s3.amazonaws.com/curia.studylane.zones.curia_studylane_z_stylesheet.css" rel="stylesheet">
+		-->
+
+	</head>
+	
+	
+	
+	
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="canvas">
+	        <div class="row-offcanvas row-offcanvas-left">
+                <div class="offcanvas-cover"></div>
+	            
+	            <div class="container-fluid">
+	                <div class="row">
+						<div class='col-md-offset-1 col-md-11' style="">
+							<h1>Here is my forum</h1>
+						</div>
+					</div>
+						
+	                <div class="row">
+						<div class="col-md-12">
+							<div class="col-md-3 col-sm-6">COLUMN 1</div>
+							<div class="col-md-3 col-sm-6">COLUMN 2</div>
+							<div class="col-md-3 col-sm-6">COLUMN 3</div>
+							<div class="col-md-3 col-sm-6">COLUMN 4</div>
+						</div>
+					</div>
+						
+						
+	                <div class="row">
+						<div class="col-md-12 bg-grey">
+								<div id="thread" class="curia-thread" data-curia-theme="my-theme"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		
+
+		
+		
+	</body>
+	
+	<!--
+	--
+	--		CrowdHound template for categories
+	--
+	-->
+	<script id="crowdhound-category-template" type="text/template">
+		<div class="comment-block curia-element-container-NEW <<#element.deleted>>deleted<</element.deleted>>"
+						data-element-id="<<element.id>>"
+						style="margin: 20px; padding-top: 20px;">
+
+			<hr/>
+			<h1><<element.summary>><h1/>
+	
+			<p>
+				<<element.description>>
+			<p/>
+	
+			<!-- Children of element <<element.id>> -->
+			<<{childrenHtml}>>
+		</div>
+	</script>
+	
+	<!--
+	--
+	--		CrowdHound template for topics
+	--
+	-->
+	<script id="crowdhound-topic-template" type="text/template">
+		<div class="comment-block curia-element-container-NEW <<#element.deleted>>deleted<</element.deleted>>"
+						data-element-id="<<element.id>>"
+						style="margin: 20px; padding-top: 20px;">
+
+			<h2><<element.summary>><h2/>
+	
+			<<{element.description}>>
+	
+			<<{childrenHtml}>>
+		</div>
+	</script>
+
+
+
+
+
+<script id="blog-template-category-list" type="text/template">
+    <div class="row">
+        <<{childrenHtml}>>
+    </div>
+</script>
+
+<script id="blog-template-category" type="text/template">
+    <<{childrenHtml}>>
+</script>
+
+<script id="blog-template-topic" type="text/template">
+    <<^element.deleted>>
+		<<#COMMENT>>
+		
+			Part 1 - Featured topic
+			
+		<</COMMENT>>
+        <<#element.featuredTopic>>
+        <div class="col-md-offset-1 col-md-6">
+            <div class="top-blog-post border-grey">
+                <div class="image-container"><img src="<<{element.banner_image}>>" alt="test" /></div>
+                <div class="top-blog-post-info border-grey">
+                    <div class="top-blog-title title-moss-green border-grey">
+                        <div class="title-shorten"><h3><<element.summary>></h3></div>
+                        <div id="ellipses-wrapper" class="blog-info-black summary">
+                            <!--<<element.description>>-->
+                        </div>
+                    </div>
+                    <div class="top-blog-info border-grey blog-info-black">
+                        <a href="/blog-details?topicId=<<element.id>>&categoryId=<<element.parentId>>">
+                            <button class="blog-post-button button-moss-green">
+                                <div class="curia-element-NEW glyphicon glyphicon-menu-right" style="margin-top:5px;"
+                                            data-curia-elementId="<<element.id>>"
+                                            data-curia-rootId="<<element.rootId>>"
+                                            data-curia-parentId="<<element.parentId>>">
+                                </div>
+                            </button>
+                        </a>
+                        <br />
+                        <span class="font-14"><<element.createdDateFromNow>></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <</element.featuredTopic>>
+
+
+
+
+		<<#COMMENT>>
+		
+			Part 2 - Latest four topics
+			
+		<</COMMENT>>
+        <<#element.latestTopic>>
+	        <<#element.firstLatestTopic>>
+	        <div class="col-md-4">
+	            <div class="row" loob>
+	        <</element.firstLatestTopic>>
+
+	        <div class="col-md-6 col-sm-6">
+	            <div class="blog-post border-grey">
+	                <div class="image-container"><img src="<<{element.banner_image}>>" alt="test" /></div>
+	                <div class="blog-title title-orange border-grey">
+	                <div class="title-shorten"><h3><<element.summary>></h3></div>
+	                </div>
+	                <div class="blog-info border-grey blog-info-black">
+	                    <a href="/blog-details?topicId=<<element.id>>&categoryId=<<element.parentId>>">
+	                        <button class="blog-post-button button-orange">
+	                            <div class="curia-element-NEW glyphicon glyphicon-menu-right"  style="margin-top:5px;"
+	                                    data-curia-elementId="<<element.id>>"
+	                                    data-curia-rootId="<<element.rootId>>"
+	                                    data-curia-parentId="<<element.parentId>>">
+	                            </div>
+	                        </button>
+	                    </a>
+	                    <br />
+	                    <span class="font-14"><<element.createdDateFromNow>></span>
+	                </div>
+	            </div>
+	        </div>
+        
+	        <<#element.lastLatestTopic>>
+	            </div>
+	        </div>
+	        <</element.lastLatestTopic>>
+        <</element.latestTopic>>
+
+
+
+
+		<<#COMMENT>>
+		
+			Part 3 - Remaining topics
+			
+		<</COMMENT>>
+        <<#element.remainingTopic>>
+            <<#element.placeOnNewLine>>
+			<!-- The offset forces this topic onto a new line -->
+            <div class="col-md-offset-1 col-md-2 col-sm-6 temp-margin">
+            <</element.placeOnNewLine>>
+            <<^element.placeOnNewLine>>
+            <div class="col-md-2 col-sm-6 temp-margin">
+            <</element.placeOnNewLine>>
+
+                <div class="blog-post border-grey">
+                    <div class="image-container"><img src="<<{element.banner_image}>>" alt="test" /></div>
+                    <div class="blog-title title-orange border-grey">
+						<div class="title-shorten"><h3><<element.summary>></h3></div>
+					</div>
+                    <div class="blog-info border-grey blog-info-black">
+                        <a href="/blog-details?topicId=<<element.id>>&categoryId=<<element.parentId>>">
+                            <button class="blog-post-button button-orange">
+                                <div class="curia-element-NEW glyphicon glyphicon-menu-right" style="margin-top:5px;"
+                                    data-curia-elementId="<<element.id>>"
+                                    data-curia-rootId="<<element.rootId>>"
+                                    data-curia-parentId="<<element.parentId>>">
+                                </div>
+                            </button>
+                        </a>
+                        <br />
+                        <span class="font-14"><<element.createdDateFromNow>></span>
+                    </div>
+                </div>
+            </div>
+        <</element.remainingTopic>>
+    <</element.deleted>>
+</script>
+
+
+
+
+
+		
+	<script src="http://crowdhound-examples:4521/libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://crowdhound-examples:4521/js/curia-0.1.1.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/moment-2.10.3/moment.min.js"></script>
+	<script>
+	
+	    // Initialize the Curia Forum
+	    Curia.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://crowdhound-examples:4521',
+	        tenantId: 'examples',
+	        development_userId: '1004513',
+	        debug: false,
+	        themes: {
+	            "my-theme": {
+	                "*_0": 				'/templates/basic/hidden',
+	                "*_1": 				'#crowdhound-category-template',
+	                "*_2": 				'#crowdhound-topic-template',
+	                "*_3": 				'/templates/basic/element-1',
+	                "attachment_0": 	'/templates/basic/hidden',
+	            },
+	            "blog_topics": {
+	                "category-list_0": 				'#blog-template-category-list',
+	                "category_0": 				'#blog-template-category',
+	                "topic_0": 				'#blog-template-topic',					
+	                "*_0": 				'/templates/basic/debug',
+				}
+	        },
+			cookers: {
+                cook_topicVariables: cook_topicVariables,
+                cook_topicImages: cook_topicImages,
+//                cook_likes: cook_likes
+            }
+	    });
+	
+		var elementSelector = '#thread';
+		var topicId = '$categoryList'; // Studylane category-list
+		var theme = 'blog_topics';
+//		Curia.displayThread(elementSelector, topicId, theme);
+
+var before = Date.now();		
+        CrowdHound.select({
+            type: 'topic',
+			withChildren: true
+        }, function(err, selection) {
+            if (err) {
+                console.log('Error during select: ', err);
+                return;
+            }
+var selectTime = Date.now();
+var elapsed = selectTime - before; 
+console.log('\n\nSELECT TOOK: ' + elapsed + 'ms\n\n');
+            console.log('\nAfter select(): ', selection);
+            // Now cook the data
+            CrowdHound.cook({ }, selection, function(err, selection) {
+                if (err) {
+                    console.log('Error during cooking: ', err);
+                    return;
+                }
+                console.log('\nAfter cook(): ', selection);
+var cookTime = Date.now();
+var elapsed = cookTime - selectTime; 
+console.log('\n\nCOOK TOOK: ' + elapsed + 'ms\n\n');
+var elapsed = cookTime - before;
+console.log('\n\nSELECT AND COOK TOOK: ' + elapsed + 'ms\n\n');
+
+                // Now display the data
+                CrowdHound.render({
+                    target: elementSelector,
+                    theme: theme
+                }, selection, function(err, selection) {
+                    if (err) {
+                        console.log('Error during display: ', err);
+                        return;
+                    }
+//                    $.unblockUI();
+                    console.log('\nAfter display(): ', selection);
+                })
+
+            })
+/*
+*/
+        });
+
+
+	    /**
+	     * Set variables in topic elements, used by mustache templates to provide styles, etc.
+	     * Note: Cooker functions replace the 'preProcess' function in previous versions of Curia.
+	     */
+	    function cook_topicVariables(params, selection, callback) {
+	    	console.log('cook_topicVariables()');
+	        var ctr = 0;
+		    CrowdHound.traverse(selection, function cookTopic(level, element, parent, next) {
+				console.log("@@@@ " + element);
+	            if (element.type == 'topic' && element.deleted != 1) {
+					
+					switch (ctr) {
+					case 0:
+						// Topic for the big image at the top.
+	                    element.featuredTopic = true;
+						break;
+					case 1:
+	                    element.latestTopic = true;
+                        element.firstLatestTopic = true;
+						break;
+					case 2:
+	                    element.latestTopic = true;
+						break;
+					case 3:
+	                    element.latestTopic = true;
+						break;
+					case 4:
+	                    element.latestTopic = true;
+                        element.lastLatestTopic = true;
+						break;
+					default:
+	                    element.remainingTopic = true;
+	                    if ((ctr - 5) % 4 == 0) {
+	                        element.placeOnNewLine = true;
+	                    } else {
+	                        element.placeOnNewLine = false;
+	                    }
+						break;
+					}
+                
+	                element.hasRelatedTopic = false;
+					/*
+	                getParameter(function(respData) {
+	                    if (
+							element.parentId === parseInt(respData.categoryId)
+							&& element.type === "topic"
+							&& element.id != parseInt(respData.topicId)
+						){
+	                        element.hasRelatedTopic = true;
+	                    }
+	                });
+					*/
+					
+                
+	                ctr++;
+	            }
+
+	            // On to next element
+	            return next(null);
+	        }, callback);// traverse
+	    }
+
+	    /**
+	     * Find the images for topics from their child 'attachment' elements.
+	     * Note: Cooker functions replace the 'preProcess' function in previous versions of Curia.
+	     */
+	    function cook_topicImages(params, selection, callback) {
+		    console.log('cook_topicImages()');
+		    CrowdHound.traverse(selection, function cookTopic(level, element, parent, next) {
+
+	            if (element.type == 'topic' && element.deleted != 1) {
+
+	                /*
+	                 * Find the banner image from a child attachment element.
+	                 */
+	                //element.banner_image = "http://www.aspneter.com/aspneter/wp-content/uploads/2016/01/no-thumb.jpg";
+	                element.banner_image = "//dbgw6333l9sbi.cloudfront.net/curia-studylane/no-image-available.png";
+	                if (element.children) {
+	                    for (var i = 0; i < element.children.length; i++) {
+	                        var child = element.children[i];
+	                        if (child.type == 'attachment') {
+								console.log('attachment is ', child)
+	                            //element.banner_image = "//curia-s3-aws.s3.amazonaws.com/curia-files/dev/" + child.userId + "/" + child.filename;
+	                            element.banner_image = "//dbgw6333l9sbi.cloudfront.net/curia-files/prod/" + child.userId + "/" + child.filename;
+								
+								
+								element.filename = child.filename;
+	                            break;
+	                        }
+	                    }
+	                }
+	            }
+
+	            // On to next element
+	            return next(null);
+
+		    }, callback);// traverse
+	    }
+
+
+	    /**
+	     * Set variables in topic elements, used by mustache templates to provide styles, etc.
+	     * Note: Cooker functions replace the 'preProcess' function in previous versions of Curia.
+	     */
+	    function getTopicImage(elementId, callback, async) {
+	      jQuery.ajax({
+	          url :  _forumUrl + "/elementsByType/attachment",
+	          async : async == undefined ? true : async, 
+	          success : function(data, textStatus, xhr) {
+	              if (xhr.status === 200) {
+	                  var responseData = {};
+	                  var isDefaultImage = true;
+	                  var bannerImage = "//dbgw6333l9sbi.cloudfront.net/curia-studylane/no-image-available.png";
+	                  var fileName = "placeholder.png";
+	                  var fileSize = 0;
+	                  var id = 0;
+	                  jQuery.each(data, function(index, value) {
+	                      if (value.parentId === elementId) {
+	                          isDefaultImage = false;
+	                          bannerImage = "//dbgw6333l9sbi.cloudfront.net/curia-files/" + Config.ENVIRONMENT + "/" + value.userId + "/" + value.filename;
+	                          fileName = value.filename;
+	                          fileSize = value.filesize;
+	                          id = value.id;
+	                      }
+	                  });
+	                  responseData = {
+	                      "isDefaultImage": isDefaultImage,
+	                      "bannerImage": bannerImage,
+	                      "fileName": fileName,
+	                      "fileSize": fileSize,
+	                      "id": id
+	                  }
+	                  callback(responseData);
+	              }
+	          }
+	      });  
+	    };
+
+	</script>
+</html>

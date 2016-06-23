@@ -1,0 +1,73 @@
+
+.myPage .ch-debug-msg {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+    color: #aaa;
+	font-size: 9px;
+    font-weight: 600;
+	float: right;
+	padding-right: 10px;
+}
+
+.myPage .ch-hr {
+	margin-top: 0px !important;
+}
+
+.myPage .ch-avatar img {
+	width: 64px;
+}
+
+.myPage .ch-menu-dropdown {
+	display: inline-block;
+	float:right;
+	zmargin-right: 180px;
+}
+
+.myPage .ch-menu-dropdown button {
+	font-size: 10px;
+	padding: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+.myPage .ch-menu-dropdown .dropdown-menu {
+	left: auto !important;
+	right: 0px;
+}
+
+.myPage .ch-username {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+	color: #3a3a3a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.myPage .ch-date {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+    color: rgba(0,0,0,.6);
+	font-size: 10px;
+    font-weight: 600;
+	padding-left: 5px;
+}
+
+.myPage .ch-description {
+	display: block;
+	font-family: Ubuntu, Sans-serif!important;
+	font-size: 14px;
+	padding-top: 5px;
+    line-height: 1.42857143;
+	color: #4b4b4b;
+	font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+	min-height: 50px;
+}
+
+.myPage a.ch-reply {
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	zfloat: left;
+}
+
