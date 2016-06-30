@@ -16,7 +16,7 @@
 	
 	
 	
-    <body class="myPage">
+    <body class="mypage">
 
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -95,7 +95,7 @@
 		var domSelector = '#thread';
 		var elementId = 1000; // test thread for tutorial 1
 		var theme = 'my-theme';
-		CrowdHound.setLoader(domSelector, function() {
+		CrowdHound.setAndCallLoader(domSelector, function() {
 			CrowdHound.load(elementId, domSelector, theme);
 		});
 

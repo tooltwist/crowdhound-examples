@@ -414,7 +414,7 @@ input.form-control, textarea.form-control {
     text-decoration: none !important;
 }
 
-a.fa.fa-paper-plane.addNewPost, a.fa.fa-plus.simple-link.add-post {
+a.fa.fa-check.addNewPost, a.fa.fa-plus.simple-link.add-post {
     padding: 5px 10px;
     font-size: 13px;
     line-height: 1.5;
@@ -1040,7 +1040,7 @@ input.form-control, textarea.form-control {
     text-decoration: none !important;
 }
 
-a.fa.fa-paper-plane.addNewPost, a.fa.fa-plus.simple-link.add-post {
+a.fa.fa-check.addNewPost, a.fa.fa-plus.simple-link.add-post {
     padding: 5px 10px;
     font-size: 13px;
     line-height: 1.5;
@@ -1539,7 +1539,7 @@ input.form-control, textarea.form-control {
     text-decoration: none !important;
 }
 
-a.fa.fa-paper-plane.addNewPost, a.fa.fa-plus.simple-link.add-post {
+a.fa.fa-check.addNewPost, a.fa.fa-plus.simple-link.add-post {
     padding: 5px 10px;
     font-size: 13px;
     line-height: 1.5;

@@ -137,7 +137,7 @@ var before = Date.now();
 		CrowdHound.select(topicId, function(err, selection) {
 	*/
 	//CrowdHound.select('$categoryList', 'category-list', function(err, selection) {
-		CrowdHound.setLoader(elementSelector, function loadForum(callback) {
+		CrowdHound.setAndCallLoader(elementSelector, function loadForum(callback) {
 			
 			// Select the thread
 			CrowdHound.select({
