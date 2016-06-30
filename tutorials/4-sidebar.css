@@ -16,6 +16,11 @@ html, body {
 	height: 250px;
 	border-radius: 3px !important;
 }
+.jumbotron.jetpack {
+	background-image: url("../images/jetpackHero.jpg");
+	background-position: center 10%;
+	height: 220px;
+}
 .container {
 	background-color: white;
 	padding-left: 0px;
@@ -104,48 +109,48 @@ a.curia-button {
 .side-menu .navbar-nav li a .glyphicon {
 	padding-right: 10px;
 }
-.side-menu .my-menu-element {
+.side-menu .my-menu-category-li {
 	border: 0;
 	margin-bottom: 0;
 	border-radius: 0;
 	background-color: transparent;
 	box-shadow: none;
 }
-.side-menu .my-menu-element .caret {
+.side-menu .my-menu-category-li .caret {
 	float: right;
 	margin: 9px 5px 0;
 }
-.side-menu .my-menu-element .indicator {
+.side-menu .my-menu-category-li .indicator {
 	float: right;
 }
-.side-menu .my-menu-element > a {
+.side-menu .my-menu-category-li > a {
 	border-bottom: 1px solid #e7e7e7;
 }
-.side-menu .my-menu-element .panel-body {
+.side-menu .my-menu-category-li .panel-body {
 	padding: 0;
 	background-color: #f3f3f3;
 }
-.side-menu .my-menu-element .panel-body .navbar-nav {
+.side-menu .my-menu-category-li .panel-body .navbar-nav {
 	width: 100%;
 }
-.side-menu .my-menu-element .panel-body .navbar-nav li {
+.side-menu .my-menu-category-li .panel-body .navbar-nav li {
 	padding-left: 15px;
 	border-bottom: 1px solid #e7e7e7;
 }
-.side-menu .my-menu-element .panel-body .navbar-nav li:last-child {
+.side-menu .my-menu-category-li .panel-body .navbar-nav li:last-child {
 	border-bottom: none;
 }
-.side-menu .my-menu-element .panel-body .panel > a {
+.side-menu .my-menu-category-li .panel-body .panel > a {
 	margin-left: -20px;
 	padding-left: 35px;
 }
-.side-menu .my-menu-element .panel-body .panel-body {
+.side-menu .my-menu-category-li .panel-body .panel-body {
 	margin-left: -15px;
 }
-.side-menu .my-menu-element .panel-body .panel-body li {
+.side-menu .my-menu-category-li .panel-body .panel-body li {
 	padding-left: 30px;
 }
-.side-menu .my-menu-element .panel-body .panel-body li:last-child {
+.side-menu .my-menu-category-li .panel-body .panel-body li:last-child {
 	border-bottom: 1px solid #e7e7e7;
 }
 .side-menu #search-trigger {
@@ -408,7 +413,7 @@ a.curia-button {
     background-color: #f8f8f8;
   }
   /* Dropdown tweek */
-  .my-menu-element .panel-body .navbar-nav {
+  .my-menu-category-li .panel-body .navbar-nav {
     margin: 0;
   }
 } /* small screen */
@@ -511,6 +516,18 @@ ZZZZ.mypage .ch-category {
 	padding: 5px;
 	zbackground-color: blue;
 }
+.mypage .my-content-pane.my-readonly{
+	padding-top: 300px;
+	zbackground-color: blue;
+}
+.mypage .my-big-forum.my-readonly {
+	padding-top: 0px !important;
+	margin-top: 0px !important;
+}
+.mypage .my-big-forum.my-readonly .curia-element:first-child {
+	border-top-style: none !important;
+	background-color: purple;
+}
 .mypage .my-content-pane .curia-displayarea {
 	zbackground-color: red;
 	text-align: right;
@@ -537,7 +554,11 @@ ZZZZ.mypage .ch-category {
 
 .mypage .my-menu-add-element-button {
 	font-size: 16px;
-	zfloat: right;
+	margin-bottom: 15px;
+}
+
+.mypage .my-menu-add-markdown-button {
+	font-size: 16px;
 	margin-bottom: 15px;
 }
 
@@ -548,3 +569,16 @@ ZZZZ.mypage .ch-category {
 	font-family: arial;
 	padding: 5px;
 }
+
+.mypage .ch-description pre {
+	background-color: #e7e7f7;
+	font-size: 11px;
+}
+
+/* See http://stackoverflow.com/questions/16445229/prevent-automatic-line-breaks-in-a-code-tag */
+.mypage .ch-description pre code {
+	white-space: pre;
+	word-break: normal;
+	word-wrap: normal;
+}
+

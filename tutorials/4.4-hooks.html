@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- Normal headers go here -->
-		<title>Small Forum</title>
+		<title>Dynamic Options</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
 
 	</head>
 	
-    <body class="mypage crowdhound-loader" id="snorgelfishZZZ">
+    <body class="mypage" id="snorgelfishZZZ">
         <div class="container">
 			
 			<div class="jumbotron">
@@ -57,7 +57,7 @@
 					            <!-- Brand -->
 					            <div class="brand-name-wrapper">
 					                <a class="navbar-brand" href="#">
-										Aussie Pop Culture
+										Animals Forum
 					                </a>
 					            </div>
 
@@ -81,42 +81,47 @@
 					    </div><!-- navbar-header -->
 
 					    <!-- Main Menu -->
-						<div id="id-generated-menu-goes-here" class="side-menu-container"></div>
+						<div id="id-generated-menu-goes-here" class="side-menu-container crowdhound-loader"></div>
 				    </nav>
 			    </div><!-- side-menu -->
 
 			    <!-- Main Content -->
 			    <div class="container-fluid">
 			        <div class="side-body">
-						<div id="id-my-content-pane" style="display: none;">
+						<div id="id-my-content-pane" style="display:none">
 							
 							<!-- This pane provides an introduction -->
 							<div id="id-my-content-intro-pane" class="my-content-pane">
-								<h1> Small-Forum </h1>
-								<p>The <strong>small-forum</strong> theme is used to display small forums with instantanious topic switching.</p>
+								<h1> Hooks </h1>
+								<p>Crowdhound gives you the chance to control the rendering process using <strong><i>hooks</i></strong>.</p>
 								
-								<p>Small forums are stored in Crowdhound as a single hierarchy, and the <strong><i>entire forum gets loaded at the time the page is loaded</i></strong>.
-									With all the content is downloaded and rendered, switching topics simply involves making the required topic pane visible.</p>
+								<p>In this example the checkboxes at the bottom of the page allow you to control whether the user
+									may change the menu options, and whether element Ids are displayed against the menu items.</p>
 									
-								<p>Since no download is required when you select a topic, switching from one topic to another is very fast.
-									Be aware however that for large forums it may take a long time to load the page, as the content of <i>every</i> topic
-									in the forum is downloaded to the browser. For anything but a small forum page loading may take a while,
-									and both network and browser resource usage may be high.</p>
-									
-								<p>Nevertheless, for forums with less than a few dozen posts this theme is easy to implement and great for the user.</p>
-								
-								<p>Note that if you use the <strong>small-forum</strong> theme the data will not be compatible with the <i>big-forum</i> theme,
-									and it may be difficult to convert the data to the appropriat format later.<p>
+								<p>(These options would not normally selectable by the user - this example is demonstrating the hooks,
+									not suggestng functionality).</p>
 			       			</div><!-- id-my-content-intro-pane -->
 
 							<!-- This is where we place the generated content -->
-							<div id="id-generated-content-goes-here"></div>
+							<div id="id-generated-content-goes-here" class="crowdhound-loader"></div>
 							
-							</div> <!-- id-my-content-pane -->
+						</div><!-- id-my-content-pane -->
 					</div><!-- side-body -->
 			    </div><!-- container-fluid -->
 	        </div><!-- row -->
 		</div><!-- container -->
+
+		
+	    <div class="container-fluid my-footer">
+		    <div class="container">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-admin-checkbox"> Administer Menu
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-showIds-checkbox"> Show element Ids<br>
+			</div>
+		</div>
+		
+		
 	</body>
 
 	<!-- Page-related Javascript -->
@@ -186,44 +191,55 @@
 	        themes: {
 	            "sidemenu-theme": { // Side menu
 					// templates
-	                "wrapper": 			'/templates/small-forum/wrapper',
-	                "categoryList_0": 	'/templates/small-forum/menu',
-	                "category_1": 		'/templates/small-forum/menu-category',
-	                "topic_2": 			'/templates/small-forum/menu-topic',
+	                "wrapper": 			'/templates/big-forum/wrapper',
+	                "categoryList_0": 	'/templates/big-forum/menu',
+	                "category_1": 		'/templates/big-forum/menu-category',
+	                "topic_2": 			'/templates/big-forum/menu-topic',
 	                "*_0": 				'/templates/basic/hidden',
 					// extra variables passed to the templates
-	                "options": 	{ flat: false, textonly: true, readonly: false, menu: { introduction: '#id-my-content-intro-pane' }, showids: false },
+	                "options": 	{
+						flat: false,
+						textonly: true,
+						readonly: function() {
+							return !$('#id-my-admin-checkbox').is(':checked');
+						},
+						showids: function() {
+//							return true;
+							return $('#id-my-showIds-checkbox').is(':checked');
+						},
+						menu: {
+							introduction: '#id-my-content-intro-pane'
+						}
+					},
 	            },
 				"content-theme" : { // Content part of the page
 					// templates
-	                "wrapper": 			'/templates/small-forum/wrapper',
-	                "categoryList_0": 	'/templates/basic/hidden',
-	                "category_1": 		'/templates/basic/hidden',
-	                "topic_2": 			'/templates/small-forum/content-element',
-	                "*_0": 				'/templates/basic/hidden',
+	                "wrapper": 			'/templates/big-forum/wrapper',
+	                "post_0": 			'/templates/big-forum/content-pane',
+	                "post_1": 			'/templates/big-forum/content-element',
+	                "image_0": 			'/templates/basic/hidden', // Let Froala display the images
+	                "*_0": 				'/templates/basic/debug',
 					// extra variables passed to the templates
 	                "options": 	{ flat: true, textonly: false, readonly: false },
 				},
 	        }
 	    });
 
-		// Display the comments for this tutorial
-		var latestContentHref = null;
-		var latestCategoryHref = null;
-		
+
 		
 		/*
-		 *	This function is called whenever we want to load the Crowdhound data
-		 *	for the Forum onto our page. This will happen when we initially load
-		 *	the page, and also whenever we add, edit or delete forum elements.
+		 *	Load the menu part of the page. This will happen when we initially
+		 *	load the page, and also whenever we add, edit or delete menu items.
 		 */
-		function loadForum(callback) {
+		var latestCategoryHref = null;
+
+		function loadMenu(callback) {
 			
 			/*
-			 *	Select the Forum elements.
+			 *	Select the menu elements.
 			 */
 	        CrowdHound.select({
-				elementId: '$example-forum-1',
+				elementId: '$example-big-forum',
 				withChildren: true
 	        }, function(err, selection) {
 	            if (err) return callback(err);				
@@ -250,39 +266,26 @@
 	                }, selection, function __render_menu(err, selection) {
 	                    if (err) return callback(err);
 
-						/*
-						 *	Render the content part of the page.
-						 */
-		                CrowdHound.render({
-		                    target: '#id-generated-content-goes-here',
-		                    theme: 'content-theme'
-		                }, selection, function __render_content(err, selection) {
-		                    if (err) return callback(err);
-							
-							
-							/*
-							 *	Show the introduction pane.
-							 */
-							$('.my-content-pane').hide(); // hide all content panes
-							$('#id-my-content-intro-pane').show(); // show the intro pane
-							$('#id-my-content-pane').show(); // show the content
+
+
+						$('#id-my-content-pane').fadeIn(300);
+
 							
 														
 							/*
-							 *	The forum is now fully displayed.
-							 *
-							 *	If we are reloading, and there was a category menu item previously expanded,
-							 *	expand it again now. Similarly if a topic was previously displayed in the
-							 *	content part of the page, make the same topic visible now.
+							 *	The menu is now displayed. If we are reloading the menu and there
+							 *	was a category menu item previously expanded, expand it again now.
 							 */
 							if (latestCategoryHref) {
 								$(latestCategoryHref).click();
 							}
-							if (latestContentHref) {
-								$('.my-content-pane').hide();
-								$(latestContentHref).show();
-							}
-							
+
+
+							/*
+							 *	The click event for the edit button unfortunately passes through
+							 *	to the menu item. To prevent the menu item being selected we
+							 *	take note that the button was pressed and check it later.
+							 */
 							var justClickedOnDropdown = false;
 							$('.my-dropdown-menu-div').on('click', function _clkOnDrpDwn() {
 								justClickedOnDropdown = true;
@@ -296,7 +299,6 @@
 							 *	when we reload after an update.
 							 */
 							$('.my-menu-category-li a[data-toggle="collapse"]').on('click', function() {
-								console.log('justClickedOnDropdown=' + justClickedOnDropdown);
 								if (justClickedOnDropdown) {
 									justClickedOnDropdown = false;
 									return true;
@@ -309,58 +311,138 @@
 								return true; // Continue processing the click event, to toggle the topics display.
 							});
 
+
 							/*
 							 *	When a user clicks on a topic on the menu, make the matching topic pane
 							 *	in the content part of the page visible. Also remember the Id of the topic
 							 *	pane's DOM element, so we can make it the pane visible again when reloading
 							 *	after an update.
 							 */
-//							$('.my-selectable-menu-item').on('click', function() {
-							$('.my-menu-select-pane').on('click', function() {
-
-								// If we got this event by clicking on the edit menu, ignore it.
+							$('.my-selectable-menu-item').on('click', function() {
 								if (justClickedOnDropdown) {
 									justClickedOnDropdown = false;
 									return true;
 								}
-								
-								// See which pane we need to show
-								var href = $(this).attr('href');
-								console.log('select content ' + href + ': ' + $(href).length);
-								
-								/*
-								 *	Display the correct page:
-								 *	1. Hide the content pane
-								 *	2. Change what's visible inside the content pane
-								 *	3. Fade the content pane back to visible.
-								 */
-								$('#id-my-content-pane').hide();
-								$('#id-my-content-pane .my-content-pane').hide();  
-								$(href).show();
-								$('#id-my-content-pane').fadeIn(300);
-
-								// Remember the pane, for after a reload.
-								latestContentHref = href;
+								// // Display the correct page
+								// var href = $(this).attr('href');
+								// $('.my-content-pane').hide();
+								// $(href).fadeIn(300);
+								// latestContentHref = href;
 							
-								// Hide the menu if small
+								// Hide the menu if on a small screen
 						        $('.navbar-nav').removeClass('slide-in');
 						        $('.side-body').removeClass('body-slide-in');
 						        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+
+								// Load the content for this topic, using it's own anchor
+								var href = $(this).attr('href');
+								loadContent(href, function(err) {
+									return callback(null);
+								});
 							
-								return true; // Stops event propagating
+								return true; // propagate events
 							});
-							
-	
-							callback();
-		                });
-						
 	                });
 	            })
 			});
-		} // loadForum
+		} // loadMenu
+		
+		
+		/**
+		 *	Load the content part of the page.
+		 *
+		 *	The href parameter can be:
+		 *	a) a DOM selector (e.g. #some-div)
+		 *	b) an anchor (e.g. $some-forum-page)
+		 *	c) not provided - reload the previous href
+		 */
+		var latestContentHref = null;
+		
+		function loadContent(href/*optional*/, callback) {
+			console.log('\n\nloadContent(' + href + ')\n');	
+
+			// See if href was provided
+			if ( !href || CrowdHound.isFunction(href)) {
+				if (latestContentHref) {
+					href = latestContentHref;
+				} else {
+					href = '#id-my-content-intro-pane';
+				}
+			}
+			latestContentHref = href;
+console.log('loading href=' + href)
+			
+			switch (href.charAt(0)) {
+			case '#':
+				// Specific pane to display
+				$('.my-content-pane').hide();
+				$('#id-generated-content-goes-here').html('');
+				$(href).fadeIn(300);
+				return;
+				
+			case '$':
+				// Anchor
+				var anchor = href;
+				break;
+				
+			default:
+				// Should not happen
+				alert('loadContent() passed invalid anchor: ' + href);
+				return;
+			}
+
+
+			/*
+			 *	Display a specific anchor in the content part of the page.
+			 */
+	        CrowdHound.select({
+				elementId: anchor,
+				type: 'post',
+				withChildren: true
+	        }, function(err, selection) {
+	            if (err) return callback(err);				
+	            console.log('\nAfter content select(): ', selection);
+				
+				
+	            /*
+				 *	Now cook the data.
+				 */
+	            CrowdHound.cook({ }, selection, function(err, selection) {
+	                if (err) {
+	                    console.log('Error during cooking: ', err);
+	                    return;
+	                }
+	                console.log('\nAfter content cook(): ', selection);
+
+
+	                /*
+					 *	Render the content.
+					 */
+					$('#id-my-content-pane').hide();
+					$('.my-content-pane').hide();
+	                CrowdHound.render({
+	                    target: '#id-generated-content-goes-here',
+	                    theme: 'content-theme'
+	                }, selection, function __render_menu(err, selection) {
+	                    if (err) return callback(err);
+						
+						// Fade the new content into view
+						$('#id-my-content-pane').fadeIn(300);						
+						return callback(null);
+					});
+				});
+			});
+			
+		}// loadContent
 
 		// Set the loader
-		CrowdHound.setAndCallLoader('.crowdhound-loader', loadForum);
+		CrowdHound.setAndCallLoader('#id-generated-menu-goes-here', loadMenu);
+		CrowdHound.setAndCallLoader('#id-generated-content-goes-here', loadContent);
+		
+		$('.my-footer input').on('change', function() {
+			loadMenu(function() { /* no nothing */ });
+		});
 
 	});	</script>
 </html>
