@@ -1,0 +1,9 @@
+{
+	"name": "crowdhound-examples",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"connect": "*",
+		"serve-static": "*"
+	}
+}

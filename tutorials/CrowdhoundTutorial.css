@@ -16,10 +16,10 @@ html, body {
 	height: 250px;
 	border-radius: 3px !important;
 }
-.jumbotron.jetpack {
-	background-image: url("../images/jetpackHero.jpg");
-	background-position: center 10%;
-	height: 220px;
+.jumbotron.tutorial-banner {
+	background-image: url("../images/ch-banner-b.png");
+	background-position: center left;
+	height: 200px;
 }
 .container {
 	background-color: white;
@@ -580,10 +580,5 @@ ZZZZ.mypage .ch-category {
 	white-space: pre;
 	word-break: normal;
 	word-wrap: normal;
-}
-
-.mypage .my-content-pane-view-count {
-	float: left;
-	color: #337ab7;
 }
 

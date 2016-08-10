@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Normal headers go here -->
+		<title>Crowdhound Tutorial</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		
+		<!-- Page-related styles -->
+		<link href="../libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://crowdhound-examples:4521/templates/markdown/markdown.css" rel="stylesheet">
+		<link href="CrowdhoundTutorial.css" rel="stylesheet">
+
+		<!-- Crowdhound-related styles -->
+		<link href="../libs/froala_editor_2.3.2/css/froala_editor.min.css" rel="stylesheet" type="text/css" />
+		<link href="../libs/froala_editor_2.3.2/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/char_counter.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/code_view.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/colors.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/emoticons.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/file.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/fullscreen.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/image.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/image_manager.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/line_breaker.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/quick_insert.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/table.css">
+		<link rel="stylesheet" href="../libs/froala_editor_2.3.2/css/plugins/video.css">
+
+	</head>
+	
+    <body class="mypage" id="snorgelfishZZZ">
+        <div class="container">
+			
+			<div class="jumbotron tutorial-banner">
+				<!-- Contains a nice background image defined in CSS -->
+			</div>
+
+			<div class="row">
+
+			    <!-- Menu -->
+			    <div class="side-menu">
+				    <nav class="navbar navbar-default" role="navigation">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					        <div class="brand-wrapper">
+					            <!-- Hamburger -->
+					            <button type="button" class="navbar-toggle">
+					                <span class="sr-only">Toggle navigation</span>
+					                <span class="icon-bar"></span>
+					                <span class="icon-bar"></span>
+					                <span class="icon-bar"></span>
+					            </button>
+
+					            <!-- Brand -->
+					            <div class="brand-name-wrapper">
+					                <a class="navbar-brand" href="#">
+										Crowdhound Tutorial
+					                </a>
+					            </div>
+
+					            <!-- Search -->
+					            <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+					                <span class="glyphicon glyphicon-search"></span>
+					            </a>
+
+					            <!-- Search body -->
+					            <div id="search" class="panel-collapse collapse">
+					                <div class="panel-body">
+					                    <form class="navbar-form" role="search">
+					                        <div class="form-group">
+					                            <input type="text" class="form-control" placeholder="Search">
+					                        </div>
+					                        <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span></button>
+					                    </form>
+					                </div>
+					            </div>
+					        </div><!-- brand wrapper -->
+					    </div><!-- navbar-header -->
+
+					    <!-- Main Menu -->
+						<div id="id-generated-menu-goes-here" class="side-menu-container crowdhound-loader"></div>
+				    </nav>
+			    </div><!-- side-menu -->
+
+			    <!-- Main Content -->
+			    <div class="container-fluid">
+			        <div class="side-body">
+						<div id="id-my-content-pane" style="display:none">
+							
+							<!-- This pane provides an introduction -->
+							<div id="id-my-content-intro-pane" class="my-content-pane">
+								<h1> Introduction </h1>
+								<p>This tutorial will teach you how to add Crowdhound functionality to your website.</p>
+								
+								<p><strong>Part One</strong> takes about five minutes, and will have you adding default functionality
+									for comments and discussions to your site.</p>
+									
+								<p><strong>Part Two</strong> takes about half an hour, and will show you how to add a blog,
+									chat, a Q&A section and FAQs to your website.</p>
+									
+								<p><strong>Part Three</strong> may take half a day, but during that time you will create templates
+									and alter the build pipeline to customize your site to your heart's desire.</p>
+									
+								<p><strong>Part Four</strong> contains various topics and cookbooks, from subject ranging from
+									event calendars and loading images with a phone camera through to building
+									a fully collaborative teching environment.</p>
+			       			</div>
+
+							<!-- This is where we place the generated content -->
+							<div id="id-generated-content-goes-here" class="crowdhound-loader"></div>
+							
+						</div><!-- id-my-content-pane -->
+					</div><!-- side-body -->
+			    </div><!-- container-fluid -->
+	        </div><!-- row -->
+		</div><!-- container -->
+
+		
+	    <div class="container-fluid my-footer">
+		    <div class="container">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-admin-checkbox"> Administer Menu
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-showIds-checkbox"> Show element Id
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-edit-content-checkbox" checked> Edit content
+			</div>
+		</div>
+		
+		
+	</body>
+
+	<!-- Page-related Javascript -->
+	<script src="../libs/jquery-1.11.3/jquery.min.js"></script>
+	<script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+			
+	<!-- Crowdhound-related Javascript -->
+	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
+	<script src="http://crowdhound-examples:4521/js/curia-0.1.2.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/moment-2.10.3/moment.min.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Converter.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Sanitizer.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Editor.js"></script>
+	<script src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/froala_editor.min.js"></script>	
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/align.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/char_counter.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/code_beautifier.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/colors.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/entities.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/file.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/font_family.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/font_size.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/fullscreen.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/image.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/image_manager.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/inline_style.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/line_breaker.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/lists.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/paragraph_format.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/paragraph_style.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/quick_insert.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/quote.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/save.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/video.min.js"></script>
+
+
+	<script>
+	$(function () {
+		
+		// Toggle the side menu
+	    $('.navbar-toggle').click(function () {
+	        $('.navbar-nav').toggleClass('slide-in');
+	        $('.side-body').toggleClass('body-slide-in');
+	        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+	    });
+   
+	   // Remove menu for searching
+	   $('#search-trigger').click(function () {
+	        $('.navbar-nav').removeClass('slide-in');
+	        $('.side-body').removeClass('body-slide-in');
+	    });
+
+	    // Initialize Crowdhound
+	    CrowdHound.init({
+	        apiVersion: '2.0',
+	        serverUrl: 'http://crowdhound-examples:4521',
+	        tenantId: 'examples',
+	        debug: false,
+			froala: {
+				// See https://www.froala.com/wysiwyg-editor/docs/options
+				heightMin: 300,
+				//heightMax: 500,
+			},
+			uploadImages: true,
+	        themes: {
+	            "sidemenu-theme": { // Side menu
+					// templates
+	                "wrapper": 			'/templates/big-forum/wrapper',
+	                "categoryList_0": 	'/templates/big-forum/menu',
+	                "category_1": 		'/templates/big-forum/menu-category',
+	                "topic_2": 			'/templates/big-forum/menu-topic',
+	                "*_0": 				'/templates/basic/hidden',
+					// extra variables passed to the templates
+	                "options": 	{
+						flat: false,
+						textonly: true,
+						readonly: function() {
+							return !$('#id-my-admin-checkbox').is(':checked');
+						},
+						showids: function() {
+//							return true;
+							return $('#id-my-showIds-checkbox').is(':checked');
+						},
+						menu: {
+							introduction: '#id-my-content-intro-pane'
+						}
+					},
+	            },
+				"content-theme" : { // Content part of the page
+					// templates
+	                "wrapper": 			'/templates/big-forum/wrapper',
+	                "post_0": 			'/templates/big-forum/content-pane',
+	                "post_1": 			'/templates/big-forum/content-element',
+	                "markdown_1": 		'/templates/big-forum/markdown-element',
+	                "image_0": 			'/templates/basic/hidden', // Let Froala display the images
+	                "*_0": 				'/templates/basic/debug',
+					// extra variables passed to the templates
+	                "options": 	{
+						flat: true,
+						textonly: false,
+						showids: false,
+						readonly: function() {
+							return !$('#id-my-edit-content-checkbox').is(':checked');
+						}
+					},
+				},
+	        },
+			cookers: {
+                cook_markdown: cook_markdown,
+	        }
+	    });
+
+		/*
+		 *	We'll be formatting some of the elements in this forum with 'Markdown',
+		 *	the same format used by Github wikis.
+		 *
+		 *	See:
+		 *		https://en.wikipedia.org/wiki/Markdown
+		 *		https://code.google.com/archive/p/pagedown/wikis/PageDown.wiki
+		 */
+		var converter = Markdown.getSanitizingConverter();
+
+		
+		/*
+		 *	Load the menu part of the page. This will happen when we initially
+		 *	load the page, and also whenever we add, edit or delete menu items.
+		 */
+		var latestCategoryHref = null;
+
+		function loadMenu(callback) {
+			
+			/*
+			 *	Select the menu elements.
+			 */
+	        CrowdHound.select({
+				elementId: '$crowdhound-tutorial',
+				withChildren: true
+	        }, function(err, selection) {
+	            if (err) return callback(err);				
+	            console.log('\nAfter select(): ', selection);
+				
+				
+	            /*
+				 *	Now cook the data.
+				 */
+	            CrowdHound.cook({ }, selection, function(err, selection) {
+	                if (err) {
+	                    console.log('Error during cooking: ', err);
+	                    return;
+	                }
+	                console.log('\nAfter cook(): ', selection);
+
+
+	                /*
+					 *	Render the sidebar menu.
+					 */
+	                CrowdHound.render({
+	                    target: '#id-generated-menu-goes-here',
+	                    theme: 'sidemenu-theme'
+	                }, selection, function __render_menu(err, selection) {
+	                    if (err) return callback(err);
+
+
+
+						$('#id-my-content-pane').fadeIn(300);
+
+							
+														
+							/*
+							 *	The menu is now displayed. If we are reloading the menu and there
+							 *	was a category menu item previously expanded, expand it again now.
+							 */
+							if (latestCategoryHref) {
+								$(latestCategoryHref).click();
+							}
+
+
+							/*
+							 *	The click event for the edit button unfortunately passes through
+							 *	to the menu item. To prevent the menu item being selected we
+							 *	take note that the button was pressed and check it later.
+							 */
+							var justClickedOnDropdown = false;
+							$('.my-dropdown-menu-div').on('click', function _clkOnDrpDwn() {
+								justClickedOnDropdown = true;
+								return true;
+							});
+
+						
+							/*
+							 *	If the user expands a category menu, remember the Id of the menu
+							 *	item's DOM element so we can re-expanded the menu in the code above
+							 *	when we reload after an update.
+							 */
+							$('.my-menu-category-li > a.curia-displayarea').on('click', function() {
+								if (justClickedOnDropdown) {
+									justClickedOnDropdown = false;
+									return true;
+								}
+								latestCategoryHref = null;
+								var previouslyCollapsed = $(this).hasClass('collapsed');
+								if (previouslyCollapsed) {
+									latestCategoryHref = '#' + $(this).attr('id');
+								}
+								return true; // Continue processing the click event, to toggle the topics display.
+							});
+
+
+							/*
+							 *	When a user clicks on a topic on the menu, make the matching topic pane
+							 *	in the content part of the page visible. Also remember the Id of the topic
+							 *	pane's DOM element, so we can make it the pane visible again when reloading
+							 *	after an update.
+							 */
+							$('.my-selectable-menu-item').on('click', function() {
+								if (justClickedOnDropdown) {
+									justClickedOnDropdown = false;
+									return true;
+								}
+								// // Display the correct page
+								// var href = $(this).attr('href');
+								// $('.my-content-pane').hide();
+								// $(href).fadeIn(300);
+								// latestContentHref = href;
+							
+								// Hide the menu if on a small screen
+						        $('.navbar-nav').removeClass('slide-in');
+						        $('.side-body').removeClass('body-slide-in');
+						        $('#search').removeClass('in').addClass('collapse').slideUp(200);
+
+
+								// Load the content for this topic, using it's own anchor
+								var href = $(this).attr('data-my-content-selector-button-href');
+								loadContent(href, function(err) {
+									return callback(null);
+								});
+								return true; // propagate events
+							});
+	                });
+	            })
+			});
+		} // loadMenu
+		
+		
+		/**
+		 *	Load the content part of the page.
+		 *
+		 *	The href parameter can be:
+		 *	a) a DOM selector (e.g. #some-div)
+		 *	b) an anchor (e.g. $some-forum-page)
+		 *	c) not provided - reload the previous href
+		 */
+		var latestContentHref = null;
+		
+		function loadContent(href/*optional*/, callback) {
+			console.log('\n\nloadContent(' + href + ')\n');	
+
+			// See if href was provided
+			if ( !href || CrowdHound.isFunction(href)) {
+				if (latestContentHref) {
+					href = latestContentHref;
+				} else {
+					href = '#id-my-content-intro-pane';
+				}
+			}
+			latestContentHref = href;
+console.log('loading href=' + href)
+			
+			switch (href.charAt(0)) {
+			case '#':
+				// Specific pane to display
+				$('.my-content-pane').hide();
+				$('#id-generated-content-goes-here').html('');
+				$(href).fadeIn(300);
+				return;
+				
+			case '$':
+				// Anchor
+				var anchor = href;
+				break;
+				
+			default:
+				// Should not happen
+				alert('loadContent() passed invalid anchor: ' + href);
+				return;
+			}
+
+
+			/*
+			 *	Display a specific anchor in the content part of the page.
+			 */
+	        CrowdHound.select({
+				elementId: anchor,
+				type: 'post',
+				withChildren: true
+	        }, function(err, selection) {
+	            if (err) return callback(err);				
+	            console.log('\nAfter content select(): ', selection);
+				
+				
+	            /*
+				 *	Now cook the data.
+				 */
+	            CrowdHound.cook({ }, selection, function(err, selection) {
+	                if (err) {
+	                    console.log('Error during cooking: ', err);
+	                    return;
+	                }
+	                console.log('\nAfter content cook(): ', selection);
+
+
+	                /*
+					 *	Render the content.
+					 */
+					$('#id-my-content-pane').hide();
+					$('.my-content-pane').hide();
+	                CrowdHound.render({
+	                    target: '#id-generated-content-goes-here',
+	                    theme: 'content-theme'
+	                }, selection, function __render_menu(err, selection) {
+	                    if (err) return callback(err);
+						
+						// Fade the new content into view
+						$('#id-my-content-pane').fadeIn(300);
+						
+				
+						// Set up the Pagedown editor, to provide a preview while editing the description.
+						var editor = new Markdown.Editor(converter);                
+						editor.run();
+												
+						return callback(null);
+					});
+				});
+			});
+			
+		}// loadContent
+
+		// Set the loader
+		CrowdHound.setAndCallLoader('#id-generated-menu-goes-here', loadMenu);
+		CrowdHound.setAndCallLoader('#id-generated-content-goes-here', loadContent);
+		
+		
+		
+		// Convert each description written using Markdown into HTML
+	    function cook_markdown(params, selection, callback) {
+		    CrowdHound.traverse(selection, function cookTopic(level, element, parent, next) {
+	            if (element.type == 'markdown') {
+					// element.convertedMarkdown = converter.makeHtml(element.description);
+					// console.log('converted from ' + element.description);
+					// console.log('to ' + element.convertedMarkdown);
+					element.extra.editor = 'dropdown';
+					element.extra.convertedMarkdown = converter.makeHtml(element.description);
+				}
+				return next(null);
+ 			}, callback);
+		}
+		
+		
+		// Watch for changes in the option in the footer
+		$('.my-footer input').on('change', function() {
+			loadMenu(function() { /* no nothing */ });
+			loadContent(function() { /* no nothing */ });
+		});
+
+	});	</script>
+</html>
