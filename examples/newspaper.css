@@ -1,0 +1,126 @@
+
+/*
+ *	For realism purposes, make this look a bit like a newpaper article.
+ */
+div.jumbotron {
+	zbackground-color: #615b52;
+	color: white;
+	font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
+	font-size: 18px;
+	padding: 0px;
+}
+.head1 {
+	background-color: #615b52;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+div.jumbotron .head1 h1 {
+	font-size: 36px;
+	padding-bottom: 20px;
+}
+.theatre {
+	color: #ffce4b;
+}
+.head2 {
+	background-color: #7d7569;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+.head2 h3 {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+p.newspaper-p {
+	font-family: Georgia,serif !important;
+	font-size: 20px;
+	color: #999;
+	text-align: justify;
+	padding-bottom: 20px;
+}
+
+img.newspaper-img {
+	width: 100%;
+	zmax-width: 620px;
+}
+.imagetext {
+	color: #767676;
+	font-family: arial;
+	font-size: 14px;
+}
+
+
+/*
+ *	Standard styles for CrowdHound.
+ */
+.mypage .my-debug-elementid {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+    color: #aaa;
+	font-size: 9px;
+    font-weight: 600;
+	float: right;
+	padding-right: 10px;
+}
+
+.mypage .ch-hr {
+	margin-top: 0px !important;
+}
+
+.mypage .ch-avatar img {
+	width: 64px;
+}
+
+.mypage .ch-menu-dropdown {
+	display: inline-block;
+	float:right;
+	zmargin-right: 180px;
+}
+
+.mypage .ch-menu-dropdown button {
+	font-size: 10px;
+	padding: 2px;
+	height: 18px;
+	width: 18px;
+}
+
+.mypage .ch-menu-dropdown .dropdown-menu {
+	left: auto !important;
+	right: 0px;
+}
+
+.mypage .ch-username {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+	color: #3a3a3a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mypage .ch-date {
+	display: inline-block;
+	font-family: Ubuntu, Sans-serif!important;
+    color: rgba(0,0,0,.6);
+	font-size: 10px;
+    font-weight: 600;
+	padding-left: 5px;
+}
+
+.mypage .ch-description {
+	display: block;
+	font-family: Ubuntu, Sans-serif!important;
+	font-size: 14px;
+	padding-top: 5px;
+    line-height: 1.42857143;
+	color: #4b4b4b;
+	font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+	min-height: 50px;
+}
+
+.mypage a.ch-reply {
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	zfloat: left;
+}
+

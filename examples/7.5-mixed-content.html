@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- Normal headers go here -->
-		<title>Dynamic Options</title>
+		<title>Mixed Content</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,7 +11,8 @@
 		<!-- Page-related styles -->
 		<link href="../libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
-		<link href="4-sidebar.css" rel="stylesheet">
+        <link href="http://crowdhound-examples:4521/templates/markdown/markdown.css" rel="stylesheet">
+		<link href="sidebar.css" rel="stylesheet">
 
 		<!-- Crowdhound-related styles -->
 		<link href="../libs/froala_editor_2.3.2/css/froala_editor.min.css" rel="stylesheet" type="text/css" />
@@ -34,7 +35,7 @@
     <body class="mypage" id="snorgelfishZZZ">
         <div class="container">
 			
-			<div class="jumbotron">
+			<div class="jumbotron jetpack">
 				<!-- Contains a nice background image defined in CSS -->
 			</div>
 
@@ -57,7 +58,7 @@
 					            <!-- Brand -->
 					            <div class="brand-name-wrapper">
 					                <a class="navbar-brand" href="#">
-										Animals Forum
+										X900 Jetpack Guidebook
 					                </a>
 					            </div>
 
@@ -92,15 +93,12 @@
 							
 							<!-- This pane provides an introduction -->
 							<div id="id-my-content-intro-pane" class="my-content-pane">
-								<h1> Hooks </h1>
-								<p>Crowdhound gives you the chance to control the rendering process using <strong><i>hooks</i></strong>.</p>
+								<h1> Mixed Content </h1>
+								<p>This forum inter-mixes posts created with either <strong><i>HTML</i></strong> or <strong><i>Markdown</i></strong>.</p>
 								
-								<p>In this example the checkboxes at the bottom of the page allow you to control whether the user
-									may change the menu options, and whether element Ids are displayed against the menu items.</p>
-									
-								<p>(These options would not normally selectable by the user - this example is demonstrating the hooks,
-									not suggestng functionality).</p>
-			       			</div><!-- id-my-content-intro-pane -->
+								<p>This combination of formats is ideal for writing technical documentation.
+									The Crowdhound technical documentation is written in this format.</p>
+			       			</div>
 
 							<!-- This is where we place the generated content -->
 							<div id="id-generated-content-goes-here" class="crowdhound-loader"></div>
@@ -117,7 +115,9 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="checkbox" id="id-my-admin-checkbox"> Administer Menu
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="checkbox" id="id-my-showIds-checkbox"> Show element Ids<br>
+				<input type="checkbox" id="id-my-showIds-checkbox"> Show element Id
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" id="id-my-edit-content-checkbox" checked> Edit content
 			</div>
 		</div>
 		
@@ -132,6 +132,9 @@
 	<script src="http://crowdhound-examples:4521/libs/mustache-2.1.3/mustache.min.js"></script>
 	<script src="http://crowdhound-examples:4521/js/curia-0.1.2.js"></script>
 	<script src="http://crowdhound-examples:4521/libs/moment-2.10.3/moment.min.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Converter.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Sanitizer.js"></script>
+    <script src="http://crowdhound-examples:4521/libs/pagedown/Markdown.Editor.js"></script>
 	<script src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/froala_editor.min.js"></script>	
     <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/align.min.js"></script>
     <script type="text/javascript" src="http://crowdhound-examples:4521/libs/froala_editor_2.3.2/js/plugins/char_counter.min.js"></script>
@@ -217,14 +220,34 @@
 	                "wrapper": 			'/templates/big-forum/wrapper',
 	                "post_0": 			'/templates/big-forum/content-pane',
 	                "post_1": 			'/templates/big-forum/content-element',
+	                "markdown_1": 		'/templates/big-forum/markdown-element',
 	                "image_0": 			'/templates/basic/hidden', // Let Froala display the images
 	                "*_0": 				'/templates/basic/debug',
 					// extra variables passed to the templates
-	                "options": 	{ flat: true, textonly: false, readonly: false },
+	                "options": 	{
+						flat: true,
+						textonly: false,
+						showids: false,
+						readonly: function() {
+							return !$('#id-my-edit-content-checkbox').is(':checked');
+						}
+					},
 				},
+	        },
+			cookers: {
+                cook_markdown: cook_markdown,
 	        }
 	    });
 
+		/*
+		 *	We'll be formatting some of the elements in this forum with 'Markdown',
+		 *	the same format used by Github wikis.
+		 *
+		 *	See:
+		 *		https://en.wikipedia.org/wiki/Markdown
+		 *		https://code.google.com/archive/p/pagedown/wikis/PageDown.wiki
+		 */
+		var converter = Markdown.getSanitizingConverter();
 
 		
 		/*
@@ -239,7 +262,7 @@
 			 *	Select the menu elements.
 			 */
 	        CrowdHound.select({
-				elementId: '$example-big-forum',
+				elementId: '$example-mixed-content', // 7000
 				withChildren: true
 	        }, function(err, selection) {
 	            if (err) return callback(err);				
@@ -298,7 +321,7 @@
 							 *	item's DOM element so we can re-expanded the menu in the code above
 							 *	when we reload after an update.
 							 */
-							$('.my-menu-category-li a[data-toggle="collapse"]').on('click', function() {
+							$('.my-menu-category-li > a.curia-displayarea').on('click', function() {
 								if (justClickedOnDropdown) {
 									justClickedOnDropdown = false;
 									return true;
@@ -336,11 +359,10 @@
 
 
 								// Load the content for this topic, using it's own anchor
-								var href = $(this).attr('href');
+								var href = $(this).attr('data-my-content-selector-button-href');
 								loadContent(href, function(err) {
 									return callback(null);
 								});
-							
 								return true; // propagate events
 							});
 	                });
@@ -428,7 +450,13 @@ console.log('loading href=' + href)
 	                    if (err) return callback(err);
 						
 						// Fade the new content into view
-						$('#id-my-content-pane').fadeIn(300);						
+						$('#id-my-content-pane').fadeIn(300);
+						
+				
+						// Set up the Pagedown editor, to provide a preview while editing the description.
+						var editor = new Markdown.Editor(converter);                
+						editor.run();
+												
 						return callback(null);
 					});
 				});
@@ -440,8 +468,27 @@ console.log('loading href=' + href)
 		CrowdHound.setAndCallLoader('#id-generated-menu-goes-here', loadMenu);
 		CrowdHound.setAndCallLoader('#id-generated-content-goes-here', loadContent);
 		
+		
+		
+		// Convert each description written using Markdown into HTML
+	    function cook_markdown(params, selection, callback) {
+		    CrowdHound.traverse(selection, function cookTopic(level, element, parent, next) {
+	            if (element.type == 'markdown') {
+					// element.convertedMarkdown = converter.makeHtml(element.description);
+					// console.log('converted from ' + element.description);
+					// console.log('to ' + element.convertedMarkdown);
+					element.extra.editor = 'dropdown';
+					element.extra.convertedMarkdown = converter.makeHtml(element.description);
+				}
+				return next(null);
+ 			}, callback);
+		}
+		
+		
+		// Watch for changes in the option in the footer
 		$('.my-footer input').on('change', function() {
 			loadMenu(function() { /* no nothing */ });
+			loadContent(function() { /* no nothing */ });
 		});
 
 	});	</script>
