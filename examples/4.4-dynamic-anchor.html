@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- Normal headers go here -->
-		<title>Much Ado about Nothing</title>
+		<title>4.4 - Dynamic Anchors</title>
 		
 		<!-- Page-related styles -->
 		<link href="newspaper.css" rel="stylesheet">
@@ -99,17 +99,54 @@
 	                "comment_1": 		'/templates/comments/comment',
 	                "*_0": 				'/templates/basic/hidden',
 					// extra variables passed to the templates
-	                "options": 	{ flat: true, textonly: true, readonly: true },
+	                "options": 	{ flat: true, textonly: true, readonly: false },
 	            },
 	        }
 	    });
+		
+		
+
+        // See if 'articleId' was specified as a parameter to this page.
+        var articleId = NaN;
+        window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+            if (key === 'articleId') {
+                articleId = parseInt(value);
+            }
+        });
+		
+		/*
+		// If the articleId was not provided as a parameter, get the articleId from the URL:
+        // 		http://.../blog/description-goes-here/<articleId>, or
+        // 		http://.../blog/<articleId>
+        //
+        if (isNaN(articleId)) {
+            var pos = window.location.pathname.lastIndexOf('/');
+            var lastbit = window.location.pathname.substring(pos + 1);
+            articleId = parseInt(lastbit);
+        }
+		*/
+		
+		// Decide what to do if no articleId was specified
+        if (isNaN(articleId)) {
+	        articleId = 12345;
+        }
+        //alert('articleId=' + articleId);
+		
+		
+		
 
 		// Display the comments for this tutorial
 		var domSelector = '#thread';
-		var elementId = '$example-text-comments';
+		var elementId = '$article-' + articleId;
 		var theme = 'my-theme';
-		
-		CrowdHound.load(elementId, domSelector, theme);
+
+		CrowdHound.setAndCallLoader(domSelector, function() {
+			CrowdHound.load({
+				elementId: elementId,
+				type: 'commentList',
+				withChildren: true
+			}, domSelector, theme);
+		});
 
 	</script>
 </html>

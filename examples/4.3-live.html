@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- Normal headers go here -->
-		<title>Much Ado about Nothing</title>
+		<title>4.3 - editable</title>
 		
 		<!-- Page-related styles -->
 		<link href="newspaper.css" rel="stylesheet">
@@ -99,17 +99,18 @@
 	                "comment_1": 		'/templates/comments/comment',
 	                "*_0": 				'/templates/basic/hidden',
 					// extra variables passed to the templates
-	                "options": 	{ flat: true, textonly: true, readonly: true },
+	                "options": 	{ flat: true, textonly: true, readonly: false },
 	            },
 	        }
 	    });
 
 		// Display the comments for this tutorial
 		var domSelector = '#thread';
-		var elementId = 1000; // hard-coded test thread for tutorial 1
+		var elementId = '$example-text-comments';
 		var theme = 'my-theme';
-		
-		CrowdHound.load(elementId, domSelector, theme);
+		CrowdHound.setAndCallLoader(domSelector, function() {
+			CrowdHound.load(elementId, domSelector, theme);
+		});
 
 	</script>
 </html>
