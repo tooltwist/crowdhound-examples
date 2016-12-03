@@ -42,25 +42,38 @@ if [ "$1" = "-r" ] ; then
 	fi
 fi
 
-FROM=zjjzjjzjjj
-FROM=trial.crowdhound.io
-FROM=crowdhound-examples:4521
-#TO=auf.crowdhound.io
-#FROM=auf.crowdhound.io
-#TO=zjjzjjzjjj
-#TO=crowdhound-examples:4521
+# Check the endpoints have no already been changed
+FROM=training.crowdhound.io
 TO=$1
-BACKUP_OPT="-i${BACKUP_SUFFIX}"
-
 ME=$(basename $0)
 
+echo ""
+echo "Checking for previous endpoint change"
+if ls -l *${BACKUP_SUFFIX} ; then
+	echo ""
+	echo "Error: Endpoints have already been converted with this command."
+	echo ""
+	echo "You may wish to return to the original files by running:"
+	echo ""
+	echo "	$0 -r"
+	echo ""
+	echo "No files changed."
+	exit 1
+fi
+
+# Make changes in the files, keeping a backup of each changed file.
+echo ""
+echo "No previous change. Proceeding..."
+echo ""
 for file in $(grep -lr "${FROM}" .) ; do
 	if  echo ${file} | grep "${BACKUP_SUFFIX}" > /dev/null; then
 		# This is a backup
-		echo " - ignore ${file}"
+		#echo " - ignore ${file}"
+		true
 	elif  echo ${file} | grep "${ME}" > /dev/null; then
 		# This script
-		echo " - ignore me ${file}"
+		#echo " - ignore me ${file}"
+		true
 	else
 		# Needs to be converted
 		echo "Convert ${file}"
@@ -68,4 +81,11 @@ for file in $(grep -lr "${FROM}" .) ; do
 	fi
 done
 
+echo ""
+echo "IMPORTANT"
+echo "---------"
+echo "The endpoints have now been changed. Please DO NOT commit"
+echo "these changes to the example files back to github!"
+echo ""
+exit 0
 
