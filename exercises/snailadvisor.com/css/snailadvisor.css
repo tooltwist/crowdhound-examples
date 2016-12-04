@@ -1,14 +1,16 @@
 
 /*
- *	For realism purposes, make this look a bit like a newpaper article.
- */
+*	For realism purposes, make this look a bit like a newpaper article.
+*/
 div.jumbotron {
 	zbackground-color: #615b52;
 	color: white;
 	font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
 	font-size: 18px;
 	padding: 0px;
+	zmargin-bottom: 0px;
 }
+
 .head1 {
 	background-color: #615b52;
 	padding-top: 20px;
@@ -17,6 +19,7 @@ div.jumbotron {
 div.jumbotron .head1 h1 {
 	font-size: 36px;
 	padding-bottom: 20px;
+	padding-left: 20px;
 }
 .theatre {
 	color: #ffce4b;
@@ -50,14 +53,14 @@ img.newspaper-img {
 
 
 /*
- *	Standard styles for CrowdHound.
- */
+*	Standard styles for CrowdHound.
+*/
 .mypage .my-debug-elementid {
 	display: inline-block;
 	font-family: Ubuntu, Sans-serif!important;
-    color: #aaa;
+	color: #aaa;
 	font-size: 9px;
-    font-weight: 600;
+	font-weight: 600;
 	float: right;
 	padding-right: 10px;
 }
@@ -92,16 +95,16 @@ img.newspaper-img {
 	display: inline-block;
 	font-family: Ubuntu, Sans-serif!important;
 	color: #3a3a3a;
-    font-size: 14px;
-    font-weight: 600;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .mypage .ch-date {
 	display: inline-block;
 	font-family: Ubuntu, Sans-serif!important;
-    color: rgba(0,0,0,.6);
+	color: rgba(0,0,0,.6);
 	font-size: 10px;
-    font-weight: 600;
+	font-weight: 600;
 	padding-left: 5px;
 }
 
@@ -110,10 +113,10 @@ img.newspaper-img {
 	font-family: Ubuntu, Sans-serif!important;
 	font-size: 14px;
 	padding-top: 5px;
-    line-height: 1.42857143;
+	line-height: 1.42857143;
 	color: #4b4b4b;
 	font-weight: 400 !important;
-    -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 	min-height: 50px;
 }
 
@@ -124,3 +127,22 @@ img.newspaper-img {
 	zfloat: left;
 }
 
+.navbar-brand img {
+	margin-top: 50px;
+	margin-top: -10px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+.carousel {
+	zwidth: 70%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+	margin: auto;
+}

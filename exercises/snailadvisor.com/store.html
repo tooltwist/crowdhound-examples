@@ -1,429 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Normal headers go here -->
-		<title>snailadvisor.com</title>
-		
-		<!-- Page-related styles -->
-		<link href="snailadvisor.css" rel="stylesheet">
-		<link href="../../libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
-		
-		<style>
-		.navbar-brand img {
-			margin-top: -10px;
-		}
-		
-	    .carousel-inner > .item > img,
-	    .carousel-inner > .item > a > img {
-	        width: 70%;
-	        margin: auto;
-	    }
-		.embed-responsive {
-			border: solid 1px #ddd;
-		}
-		</style>
-	</head>
-	
-    <body class="mypage">
-		
+<head>
+	<!-- Normal headers go here -->
+	<title>snailadvisor.com</title>
+
+	<!-- Page-related styles -->
+	<link href="../libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/snailadvisor.css" rel="stylesheet">
+
+</head>
+
+<body class="mypage">
+
+	<!-- navigation bar -->
+	<div>
+		<nav class="navbar navbar-default">
+			<div class="container">
+
+				<!-- Logo -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						<img alt="Brand" src="img/snail.png">
+					</a>
+				</div>
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">snailadvisor.com</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Type of snail <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="african.html">Giant African Snails</a></li>
+								<li><a href="garden.html">Garden Snails</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="slugs.html">Slugs</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Where to Buy <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="store.html?store=101">Steve's Snails</a></li>
+								<li><a href="store.html?store=104">Pets R'Us</a></li>
+								<li><a href="store.html?store=102">Slimers Supplies</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="store.html?store=936">Snail medical supplies</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="store.html?store=572">Snail Harness Supply Co.</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="forum.html">Forum</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Login</a></li>
+								<li><a href="#">Open Account</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+
+
+
+
+	<div class="canvas store-div" id="store-101">
+
+		<!-- Steve's Pets -->
+		<div class="jumbotron">
+			<div class="head1">
+				<div class="container">
+					<h1>Steve's Pet Shoppe</h1>
+				</div>
+			</div>
+		</div><!-- jumbotron -->
+
+
 		<div class="container">
-			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
+			<div class="row">
+				<div class='col-md-4'>
+					<h4>Address</h4>
+					<p>
+						55 Mechanic Street<br>
+						Lebanon, NH 03766 US<br>
 
-				<!-- Logo -->				  
-			    <div class="navbar-header">
-			      <a class="navbar-brand" href="index.html">
-			        <img alt="Brand" src="snail.jpg">
-			      </a>
-			    </div>
+					</p>
 
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <a class="navbar-brand" href="index.html">snailadvisor.com</a>
-			    </div>
+					<h4>Contact</h4>
+					<p>
+						Sharon Grodan<br>
+						Phone: 603-448-5959<br>
+						Email: Info@lebanonpet.com<br>
+					</p>
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					
-			      <ul class="nav navbar-nav">
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Type of snail <span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="african.html">Giant African Snails</a></li>
-			            <li><a href="garden.html">Garden Snails</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="slugs.html">Slugs</a></li>
-			          </ul>
-			        </li>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Where to Buy <span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="store.html?store=101">Steve's Snails</a></li>
-			            <li><a href="store.html?store=104">Pets R'Us</a></li>
-			            <li><a href="store.html?store=102">Slimers Supplies</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="store.html?store=936">Snail medical supplies</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="store.html?store=572">Snail Harness Supply Co.</a></li>
-			          </ul>
-			        </li>
-			      </ul>
-				  
-				  
-					  <!--
-			      <form class="navbar-form navbar-left">
-			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
-			        </div>
-			        <button type="submit" class="btn btn-default">Submit</button>
-			      </form>
-						  -->
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="blog.html">Blog</a></li>
-			        <li><a href="forum.html">Forum</a></li>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li><a href="#">Login</a></li>
-			            <li><a href="#">Open Account</a></li>
-			          </ul>
-			        </li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
+
+					<h4>Business Hours</h4>
+					<p>
+						Sunday: 10:00am - 6:00pm<br>
+						Mon - Sat: 9:00am - 7:00pm<br>
+					</p>
+
+				</div><!-- col-md-4 -->
+
+				<div class='col-md-8'>
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55468.58537408953!2d-91.30622518322791!3d29.680670842656937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8623d94906c1e075%3A0xd4054effd68d49bf!2s841+US-90%2C+Morgan+City%2C+LA+70380!5e0!3m2!1sen!2sus!4v1472392943230" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+
+				</div><!-- col-md-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- End of Steve's Pets -->
+
+
+	<div class="canvas store-div" id="store-104">
+
+		<!-- Snails R US -->
+		<div class="jumbotron">
+			<div class="head1">
+				<div class="container">
+					<h1>Snails R Us</h1>
+				</div>
+			</div>
+		</div><!-- jumbotron -->
+
+
+		<div class="container">
+			<div class="row">
+				<div class='col-md-4'>
+					<h4>Address</h4>
+					<p>
+						Henry Lawson Avenue<br>
+						Alice Springs, Australia<br>
+
+					</p>
+
+					<h4>Contact</h4>
+					<p>
+						Ahrlod Smythe<br>
+						Phone: 618-123-4567<br>
+						Email: snailguts@bigpond.com<br>
+					</p>
+
+
+					<h4>Business Hours</h4>
+					<p>
+						Mon - Fri: 9:00am - 5:30pm<br>
+						Saturday: 9:00am - 2:00pm<br>
+						Sunday: 10:00am - 2:00pm<br>
+						Close Public Holidays
+					</p>
+
+				</div><!-- col-md-4 -->
+
+				<div class='col-md-8'>
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29929630.716513913!2d115.932373314569!3d-23.69313998461768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b321ec952381cc5%3A0x19178e0128cfa389!2sPets+&#39;R&#39;+Us!5e0!3m2!1sen!2sph!4v1472395036844" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+				</div><!-- col-md-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- End of Snails R Us -->
+
+
+	<div class="canvas store-div" id="store-102">
+
+		<!-- Slimer's Supplies -->
+		<div class="jumbotron">
+			<div class="head1">
+				<div class="container">
+					<h1>Slimer's Supplies</h1>
+				</div>
+			</div>
+		</div><!-- jumbotron -->
+
+
+		<div class="container">
+			<div class="row">
+				<div class='col-md-4'>
+					<h4>Address</h4>
+					<p>
+						21 Lexington Ave<br>
+						Merchantville, NJ 08109, USA<br>
+
+					</p>
+
+					<h4>Contact</h4>
+					<p>
+						Muriel Slindgren<br>
+						Phone: 928-555-8277<br>
+						Email: muriel@slimers.com<br>
+					</p>
+
+
+					<h4>Business Hours</h4>
+					<p>
+						Mon - Sat: 9:00am - 5:00pm<br>
+					</p>
+
+				</div><!-- col-md-4 -->
+
+				<div class='col-md-8'>
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48937.65963456585!2d-75.09198692104195!3d39.95025277942214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6ca2bdff6600d%3A0x97e31b423fb04c8f!2sSLIMERS!5e0!3m2!1sen!2sph!4v1472395376294" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+
+				</div><!-- col-md-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- End of Slimer's Supplies -->
+
+
+	<div class="canvas store-div" id="store-936">
+
+		<!-- Snail Medical Supplies Inc. -->
+		<div class="jumbotron">
+			<div class="head1">
+				<div class="container">
+					<h1>Snail Medical Supplies Inc.</h1>
+				</div>
+			</div>
+		</div><!-- jumbotron -->
+
+
+		<div class="container">
+			<div class="row">
+				<div class='col-md-4'>
+					<h4>Address</h4>
+					<p>
+						6300 W by NW Blvd #800<br>
+						Houston TX, 293388, USA<br>
+
+					</p>
+
+					<h4>Contact</h4>
+					<p>
+						Sir Reginald Julio<br>
+						Phone: 555-448-5555<br>
+						Email: reg@juliosup.com<br>
+					</p>
+
+
+					<h4>Business Hours</h4>
+					<p>
+						Mon - Sat: 7:00am - 7:00pm<br>
+						Sunday: 04:00am - 2:00pm<br>
+					</p>
+
+				</div><!-- col-md-4 -->
+
+				<div class='col-md-8'>
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221449.84772577393!2d-95.67308368040378!3d29.859836000000065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cf89b57e44fb%3A0xd488e937facf00e4!2sWebster+Veterinary!5e0!3m2!1sen!2sph!4v1472395542910" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+				</div><!-- col-md-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- End of Snail Medical Supplies -->
+
+
+	<div class="canvas store-div" id="store-572">
+
+		<!-- Snail Harness Supply Co. -->
+		<div class="jumbotron">
+			<div class="head1">
+				<div class="container">
+					<h1>Snail Harness Supply Co.</h1>
+				</div>
+			</div>
+		</div><!-- jumbotron -->
+
+
+		<div class="container">
+			<div class="row">
+				<div class='col-md-4'>
+					<h4>Address</h4>
+					<p>
+						308 E Prince St #246<br>
+						St Paul, MN 55101, USA<br>
+
+					</p>
+
+					<h4>Contact</h4>
+					<p>
+						Sigmund Harbinger<br>
+						Phone: 999-231-1121<br>
+						Email: ziggy@leatherman.com<br>
+					</p>
+
+
+					<h4>Business Hours</h4>
+					<p>
+						Mon - Fri: 9:00am - 7:00pm<br>
+					</p>
+
+				</div><!-- col-md-4 -->
+
+				<div class='col-md-8'>
+					<div class="embed-responsive embed-responsive-4by3">
+						<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.725173006232!2d-93.08582118406898!3d44.94925457909824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f7d1a4e371a353%3A0xbd38f7953908ca2c!2sLeatherworks+Minnesota+Llc!5e0!3m2!1sen!2sph!4v1472395770638" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+
+				</div><!-- col-md-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- End of Snail Harness Supply Co. -->
+
+
+
+	<!--
+	- -
+	- -
+	- -	REVIEWS SECTION
+	- -
+	- -
+-->
+<div class="canvas">
+	<div class="container">
+		<div class="row">
+			<div class='col-md-12'>
+				<h2>Reviews</h2>
+				<p>
+					By the first to review this store.
+				</p>
+
+			</div><!-- col-md-12 -->
+		</div><!-- row -->
+
+	</div><!-- container -->
+	<br/>
+	<br/>
+</div>
+
+<div class="canvas">
+	<div class="jumbotron">
+		<div class="head2">
 		</div>
-		
-		
-		
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser.
-			Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-			
-			
-			
+	</div><!-- jumbotron -->
+</div>
 
-        <div class="canvas store-div" id="store-101">
-			
-			<!-- Steve's Pets -->
-			<div class="jumbotron">
-				<div class="head1">
-					<div class="container">
-						<h1>Steve's Pet Shoppe</h1>
-					</div>
-				</div>
-			</div><!-- jumbotron -->
-			
-			
-            <div class="container">
-                <div class="row">
-					<div class='col-md-4'>
-						<h4>Address</h4>
-						<p>
-							55 Mechanic Street<br>
-							Lebanon, NH 03766 US<br>
-
-						</p>
-						
-						<h4>Contact</h4>
-						<p>
-							Sharon Grodan<br>
-							Phone: 603-448-5959<br>
-							Email: Info@lebanonpet.com<br>
-						</p>
-						
-						
-						<h4>Business Hours</h4>
-						<p>
-							Sunday: 10:00am - 6:00pm<br>
-							Mon - Sat: 9:00am - 7:00pm<br>
-						</p>
-						
-					</div><!-- col-md-4 -->
-					
-					<div class='col-md-8'>
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55468.58537408953!2d-91.30622518322791!3d29.680670842656937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8623d94906c1e075%3A0xd4054effd68d49bf!2s841+US-90%2C+Morgan+City%2C+LA+70380!5e0!3m2!1sen!2sus!4v1472392943230" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</div>
-						
-					</div><!-- col-md-8 -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- End of Steve's Pets -->
-			
-
-        <div class="canvas store-div" id="store-104">
-			
-			<!-- Snails R US -->
-			<div class="jumbotron">
-				<div class="head1">
-					<div class="container">
-						<h1>Snails R Us</h1>
-					</div>
-				</div>
-			</div><!-- jumbotron -->
-			
-			
-            <div class="container">
-                <div class="row">
-					<div class='col-md-4'>
-						<h4>Address</h4>
-						<p>
-							Henry Lawson Avenue<br>
-							Alice Springs, Australia<br>
-
-						</p>
-						
-						<h4>Contact</h4>
-						<p>
-							Ahrlod Smythe<br>
-							Phone: 618-123-4567<br>
-							Email: snailguts@bigpond.com<br>
-						</p>
-						
-						
-						<h4>Business Hours</h4>
-						<p>
-							Mon - Fri: 9:00am - 5:30pm<br>
-							Saturday: 9:00am - 2:00pm<br>
-							Sunday: 10:00am - 2:00pm<br>
-							Close Public Holidays
-						</p>
-						
-					</div><!-- col-md-4 -->
-					
-					<div class='col-md-8'>
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29929630.716513913!2d115.932373314569!3d-23.69313998461768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2b321ec952381cc5%3A0x19178e0128cfa389!2sPets+&#39;R&#39;+Us!5e0!3m2!1sen!2sph!4v1472395036844" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</div>						
-					</div><!-- col-md-8 -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- End of Snails R Us -->
-			
-
-        <div class="canvas store-div" id="store-102">
-			
-			<!-- Slimer's Supplies -->
-			<div class="jumbotron">
-				<div class="head1">
-					<div class="container">
-						<h1>Slimer's Supplies</h1>
-					</div>
-				</div>
-			</div><!-- jumbotron -->
-			
-			
-            <div class="container">
-                <div class="row">
-					<div class='col-md-4'>
-						<h4>Address</h4>
-						<p>
-							21 Lexington Ave<br>
-							Merchantville, NJ 08109, USA<br>
-
-						</p>
-						
-						<h4>Contact</h4>
-						<p>
-							Muriel Slindgren<br>
-							Phone: 928-555-8277<br>
-							Email: muriel@slimers.com<br>
-						</p>
-						
-						
-						<h4>Business Hours</h4>
-						<p>
-							Mon - Sat: 9:00am - 5:00pm<br>
-						</p>
-						
-					</div><!-- col-md-4 -->
-					
-					<div class='col-md-8'>
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48937.65963456585!2d-75.09198692104195!3d39.95025277942214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6ca2bdff6600d%3A0x97e31b423fb04c8f!2sSLIMERS!5e0!3m2!1sen!2sph!4v1472395376294" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-					  </div>
-						
-					</div><!-- col-md-8 -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- End of Slimer's Supplies -->
-			
-
-        <div class="canvas store-div" id="store-936">
-			
-			<!-- Snail Medical Supplies Inc. -->
-			<div class="jumbotron">
-				<div class="head1">
-					<div class="container">
-						<h1>Snail Medical Supplies Inc.</h1>
-					</div>
-				</div>
-			</div><!-- jumbotron -->
-			
-			
-            <div class="container">
-                <div class="row">
-					<div class='col-md-4'>
-						<h4>Address</h4>
-						<p>
-							6300 W by NW Blvd #800<br>
-							Houston TX, 293388, USA<br>
-
-						</p>
-						
-						<h4>Contact</h4>
-						<p>
-							Sir Reginald Julio<br>
-							Phone: 555-448-5555<br>
-							Email: reg@juliosup.com<br>
-						</p>
-						
-						
-						<h4>Business Hours</h4>
-						<p>
-							Mon - Sat: 7:00am - 7:00pm<br>
-							Sunday: 04:00am - 2:00pm<br>
-						</p>
-						
-					</div><!-- col-md-4 -->
-					
-					<div class='col-md-8'>
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221449.84772577393!2d-95.67308368040378!3d29.859836000000065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cf89b57e44fb%3A0xd488e937facf00e4!2sWebster+Veterinary!5e0!3m2!1sen!2sph!4v1472395542910" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</div>						
-					</div><!-- col-md-8 -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- End of Snail Medical Supplies -->
-			
-
-        <div class="canvas store-div" id="store-572">
-			
-			<!-- Snail Harness Supply Co. -->
-			<div class="jumbotron">
-				<div class="head1">
-					<div class="container">
-						<h1>Snail Harness Supply Co.</h1>
-					</div>
-				</div>
-			</div><!-- jumbotron -->
-			
-			
-            <div class="container">
-                <div class="row">
-					<div class='col-md-4'>
-						<h4>Address</h4>
-						<p>
-							308 E Prince St #246<br>
-							St Paul, MN 55101, USA<br>
-
-						</p>
-						
-						<h4>Contact</h4>
-						<p>
-							Sigmund Harbinger<br>
-							Phone: 999-231-1121<br>
-							Email: ziggy@leatherman.com<br>
-						</p>
-						
-						
-						<h4>Business Hours</h4>
-						<p>
-							Mon - Fri: 9:00am - 7:00pm<br>
-						</p>
-						
-					</div><!-- col-md-4 -->
-					
-					<div class='col-md-8'>
-						<div class="embed-responsive embed-responsive-4by3">
-						  <iframe class="embed-responsive-item"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.725173006232!2d-93.08582118406898!3d44.94925457909824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f7d1a4e371a353%3A0xbd38f7953908ca2c!2sLeatherworks+Minnesota+Llc!5e0!3m2!1sen!2sph!4v1472395770638" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</div>
-						
-					</div><!-- col-md-8 -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- End of Snail Harness Supply Co. -->
+</body>
 
 
+<!-- Page-related Javascript -->
+<script src="../libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 
-		<!--
-		  --
-		  --
-		  --	REVIEWS SECTION
-		  --
-		  --
-		  -->
-        <div class="canvas">
-            <div class="container">
-                <div class="row">
-					<div class='col-md-12'>
-						<h2>Reviews</h2>
-						<p>
-							By the first to review this store.
-						</p>
-						
-					</div><!-- col-md-12 -->
-				</div><!-- row -->
+<script>
 
-			</div><!-- container -->
-			<br/>
-			<br/>
-		</div>
-		
-        <div class="canvas">
-			<div class="jumbotron">
-				<div class="head2">
-				</div>
-			</div><!-- jumbotron -->
-		</div>
-
-	</body>
-
-
-	<!-- Page-related Javascript -->
-	<script src="../../libs/jquery-1.11.3/jquery.min.js"></script>
-	<script src="../../libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-	
-	<script>
-	
-	// Show the DIV for this store
-    var storeId = NaN;
-    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
-        if (key === 'store') {
-            storeId = parseInt(value);
-        }
-    });
-	$('.store-div').hide();
-	var elem = $('#store-' + storeId);
-	if (elem.length === 0) {
-		alert('unknown store')
-	} else {
-		$('#store-' + storeId).show();
+/*
+ *	This code gets the "store" parameter from the URL and
+ *	uses it to decide which DIV should be made visible.
+ *
+ *	We wouldn't normally do this - having multiple stores
+ *	pre-loaded on the page is only used to simulate a page
+ *	that would normally be populated from a database, etc.
+ */
+var storeId = NaN;
+window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+	if (key === 'store') {
+		storeId = parseInt(value);
 	}
-	/*
-	alert('ok 1')
-	$('#store-101').hide();
-	*/
-	
-	
-	
-	// TUTORIAL
-	// --------
-	// Add code for a dynamic anchor here
-	// ....
-	
-	
-	
-	
-	</script>
+});
+$('.store-div').hide();
+var elem = $('#store-' + storeId);
+if (elem.length === 0) {
+	alert('unknown store')
+} else {
+	$('#store-' + storeId).show();
+}
+/*
+alert('ok 1')
+$('#store-101').hide();
+*/
+
+
+
+// TUTORIAL
+// --------
+// Add code for a dynamic anchor here
+// ....
+
+
+
+
+</script>
 
 </html>
