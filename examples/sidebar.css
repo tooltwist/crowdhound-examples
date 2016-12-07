@@ -6,7 +6,7 @@ html, body {
 }
 
 .jumbotron {
-	background-image: url("../images/dmitriy-sladkov-timebridge-4.jpg");
+	background-image: url("images/dmitriy-sladkov-timebridge-4.jpg");
 	background-size: cover;
 	background-position: center;
 	color: #f42;
@@ -17,7 +17,7 @@ html, body {
 	border-radius: 3px !important;
 }
 .jumbotron.jetpack {
-	background-image: url("../images/jetpackHero.jpg");
+	background-image: url("images/jetpackHero.jpg");
 	background-position: center 10%;
 	height: 220px;
 }
