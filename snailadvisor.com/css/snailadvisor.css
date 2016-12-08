@@ -180,8 +180,8 @@ img.newspaper-img {
 }
 .carousel {
 	zwidth: 70%;
-	margin-left: 10%;
-	margin-right: 10%;
+	/*margin-left: 10%;*/
+	/*margin-right: 10%;*/
 }
 
 .carousel-inner > .item > img,
