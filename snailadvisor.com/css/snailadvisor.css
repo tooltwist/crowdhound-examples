@@ -1,14 +1,20 @@
-
-/*
-*	For realism purposes, make this look a bit like a newpaper article.
-*/
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+section {
+	padding: 30px 15px;
+}
+section.store-div {
+	padding: 0;
+}
 div.jumbotron {
 	zbackground-color: #615b52;
 	color: white;
-	font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;
+	/*font-family: "Guardian Egyptian Web","Guardian Text Egyptian Web",Georgia,serif;*/
+  font-family: 'Indie Flower', cursive;
 	font-size: 18px;
 	padding: 0px;
-	zmargin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 .head1 {
@@ -32,6 +38,9 @@ div.jumbotron .head1 h1 {
 .head2 h3 {
 	margin-top: 0px;
 	margin-bottom: 8px;
+}
+h2, h3, h4 {
+	font-family: 'Indie Flower', cursive;
 }
 p.newspaper-p {
 	font-family: Georgia,serif !important;
@@ -127,13 +136,24 @@ img.newspaper-img {
 	zfloat: left;
 }
 
+.navbar-brand {
+	font-family: 'Indie Flower', cursive;
+}
 .navbar-brand img {
 	margin-top: 50px;
 	margin-top: -10px;
 }
+.navbar-default .navbar-nav li>a {
+	font-family: 'Indie Flower', cursive;
+}
 
 .navbar {
 	margin-bottom: 0px;
+}
+.navbar-default {
+	background: white;
+	border-radius: 0;
+	border: 0;
 }
 .carousel {
 	zwidth: 70%;
@@ -150,4 +170,15 @@ img.newspaper-img {
 .storemap .embed-responsive {
 	border: solid 1px #ccc;
 	background-color: #eee;
+}
+
+
+/*
+FOOTER
+*/
+footer {
+	padding: 25px 15px;
+	background: #615b52;
+	text-align: center;
+	color: #333;
 }
