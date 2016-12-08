@@ -2,7 +2,7 @@
 
 This project provides examples and a tutorial for how to add Crowdhound to a website.
 
-While going through the tutorial you will view the examples, and add the functionality for **comments**, **discussions**, a **blog**, **chat**, **page view counting**, **user reviews and ratings**, and an **events calendar** to a locally hosted website named [snailadvisor.com](http://localhost:8080/exercises/snailadvisor.com).
+While going through the tutorial you will view the examples, and add the functionality for **comments**, **discussions**, a **blog**, **chat**, **page view counting**, **user reviews and ratings**, and an **events calendar** to a locally hosted website named [snailadvisor.com](https://crowdhound.github.io/snailadvisor.com/).
 
 Start the tutorial by clicking [here](https://crowdhound.github.io/examples/).
 
